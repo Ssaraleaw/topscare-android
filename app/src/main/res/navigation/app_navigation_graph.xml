@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.android.topscare.ui.splash.SplashScreenFragment"
-        tools:layout="@layout/splash_fragment"
+        tools:layout="@layout/fragment_splash_screen"
         android:label="SplashFragment">
         <action
             android:id="@+id/action_splashScreenFragment_to_mainMenuFragment"
