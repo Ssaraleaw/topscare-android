@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="primary">#D2146F</color>
+    <color name="secondary">#1D1D1B</color>
+    <color name="green_brand">#358873</color>
+    <color name="off_white">#F3EBDF</color>
+
+    <!--  Tints and Shades  -->
+    <color name="gray_100">#F8F8F8</color>
+    <color name="gray_200">#F2F4F6</color>
+    <color name="gray_300">#E8EDF2</color>
+    <color name="gray_400">#D2DAE2</color>
+    <color name="gray_500">#99A2AD</color>
+    <color name="gray_600">#696F7E</color>
+    <color name="gray_700">#1D1D1B</color>
+
+    <color name="green_100">#DFEAE2</color>
+    <color name="green_200">#B4D6C1</color>
+    <color name="green_300">#8DC3A7</color>
+    <color name="green_400">#6BAF92</color>
+    <color name="green_500">#4E9C81</color>
+    <color name="green_600">#358873</color>
+    <color name="green_700">#207567</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="light_grey">#E5E2DF</color>
+    <color name="yellow">#E8B644</color>
+    <color name="orange">#E38000</color>
+    <color name="purple">#D2146F</color>
+    <color name="mint">#1ECACA</color>
+
+    <!--  State  -->
+    <color name="error">#EB382A</color>
+    <color name="success_50">#F4FFEA</color>
+    <color name="success_100">#B4DD80</color>
+    <color name="success_200">#72AB33</color>
+    <color name="success_300">#5A9717</color>
+
+</resources>

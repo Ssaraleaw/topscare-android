@@ -1,16 +1,38 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Topscareandroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="background">@android:color/white</item>
+        <item name="android:fontFamily">@font/dmsans_family</item>
+    </style>
+
+    <style name="ActionButtonTheme.Primary" parent="Theme.MaterialComponents.Light">
+        <item name="android:layout_height">@dimen/size_60</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:backgroundTint">@color/bg_color_states_material_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/size_40</item>
+        <item name="android:textColor">@color/foreground_color_states_material_button</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActionButtonTheme.Secondary" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_height">@dimen/size_60</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:layout_marginBottom">@dimen/size_24</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/size_40</item>
+        <item name="android:textColor">@color/green_700</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActionButtonTheme.Small" parent="Theme.MaterialComponents.Light">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:backgroundTint">@color/bg_color_states_material_button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/size_40</item>
+        <item name="android:textColor">@color/foreground_color_states_material_button</item>
     </style>
 </resources>

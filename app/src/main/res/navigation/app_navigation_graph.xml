@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.android.topscare.ui.main.MainMenuFragment"
+        tools:layout="@layout/fragment_main_menu"
+        android:label="MainMenuFragment">
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.android.topscare.ui.splash.SplashScreenFragment"
+        tools:layout="@layout/splash_fragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+</navigation>

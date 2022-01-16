@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance">
+        <item name="android:fontFamily">@font/dmsans_family</item>
+    </style>
+
+    <style name="TextAppearance.Headline1" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline2" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline3" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline4" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h4</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline5" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h5</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline6" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h6</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline7" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_h7</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Body" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+
+    <style name="TextAppearance.BodyParagraph" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_body_paragraph</item>
+    </style>
+
+    <style name="TextAppearance.BodySmall" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_body_small</item>
+    </style>
+
+    <style name="TextAppearance.BodyTiny" parent="TextAppearance">
+        <item name="android:textSize">@dimen/text_size_body_tiny</item>
+    </style>
+
+    <style name="TextAppearance.BottomNav" parent="TextAppearance">
+        <item name="android:textSize">@dimen/nav_text_size</item>
+    </style>
+
+</resources>
