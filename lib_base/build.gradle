@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -38,6 +39,18 @@ dependencies {
     api "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
     api "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
     api "androidx.hilt:hilt-navigation-fragment:${versions.hilt_navigation_fragment}"
+
+    api "com.google.dagger:hilt-android:${versions.hilt}"
+    api "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hilt_compiler}"
+    kapt "com.google.dagger:hilt-android-compiler:${versions.hilt}"
+    kapt "androidx.hilt:hilt-compiler:${versions.hilt_compiler}"
+
+    api "com.google.code.gson:gson:${versions.gson}"
+    api "com.squareup.okhttp3:logging-interceptor:${versions.interceptor}"
+    api "com.squareup.retrofit2:converter-gson:2.6.2"
+    api "com.squareup.retrofit2:retrofit:2.7.1"
+
+    api 'androidx.security:security-crypto:1.1.0-alpha03'
     kapt "androidx.hilt:hilt-compiler:${versions.hilt_compiler}"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
