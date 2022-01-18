@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.android.topscare.databinding.FragmentMainMenuBinding
 import com.android.topscare.lib_base.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainMenuFragment : BaseFragment() {
     private val viewModel: MainMenuViewModel by viewModels()
     private lateinit var binding: FragmentMainMenuBinding

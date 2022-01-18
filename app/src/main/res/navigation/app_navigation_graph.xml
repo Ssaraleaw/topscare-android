@@ -3,20 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/mainMenuFragment"
         android:name="com.android.topscare.ui.main.MainMenuFragment"
         tools:layout="@layout/fragment_main_menu"
         android:label="MainMenuFragment">
-    </fragment>
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.android.topscare.ui.splash.SplashScreenFragment"
-        tools:layout="@layout/fragment_splash_screen"
-        android:label="SplashFragment">
-        <action
-            android:id="@+id/action_splashScreenFragment_to_mainMenuFragment"
-            app:destination="@id/mainMenuFragment" />
     </fragment>
 </navigation>

@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">topscare-android</string>
     <string name="label_powered_by">Powered by WorldMedic</string>
+    <string name="label_main_menu">เมนูหลัก</string>
+    <string name="check">เช็คสินค้า</string>
+    <string name="count">นับจำนวน</string>
+    <string name="order">สั่งสินค้า</string>
+    <string name="receive">ได้รับสินค้า</string>
+    <string name="setting">ตั้งค่า</string>
 </resources>

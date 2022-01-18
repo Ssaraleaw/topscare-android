@@ -3,6 +3,7 @@ package com.android.topscare.di.modules
 import android.app.Application
 import android.content.Context
 import com.android.topscare.BuildConfig
+import com.android.topscare.domain.usecase.AppSettingUseCase
 import com.android.topscare.lib_base.utils.HttpLogger
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
@@ -10,8 +11,8 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,7 +22,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ApplicationComponent::class)
 class NetworkModule {
 
     @Provides
@@ -78,10 +79,11 @@ class NetworkModule {
     @Named("BaseRetrofit")
     fun provideRetrofit(
         gson: GsonConverterFactory,
-        @Named("BaseOkHttpClient") okHttpClient: OkHttpClient
+        @Named("BaseOkHttpClient") okHttpClient: OkHttpClient,
+        appSettingUseCase: AppSettingUseCase
     ): Retrofit = Retrofit.Builder()
         .addConverterFactory(gson)
-        .baseUrl(BuildConfig.SERVER_URL)
+        .baseUrl(appSettingUseCase.getBaseUrl())
         .client(okHttpClient)
         .build()
 }
