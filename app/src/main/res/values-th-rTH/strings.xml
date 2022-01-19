@@ -17,4 +17,7 @@
     <string name="scanning_process">ขั้นตอนการสแกน</string>
     <string name="prepare_master_data">การเตรียมข้อมูล Master</string>
     <string name="etc">อื่นๆ</string>
+    <string name="error">ระบบเกิดข้อผิดพลาด</string>
+    <string name="error_desc">ขออภัยระบบไม่สามารถทำรายการได้ในขณะนี้ กรุณาทำรายการใหม่ภายหลัง</string>
+    <string name="use_camera">Use Camera</string>
 </resources>

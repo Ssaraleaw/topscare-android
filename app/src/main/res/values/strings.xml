@@ -16,4 +16,7 @@
     <string name="scanning_process">Scanning Process</string>
     <string name="prepare_master_data">Prepare master data</string>
     <string name="etc">etc.</string>
+    <string name="error">System Error</string>
+    <string name="error_desc">Sorry system is not available temporarily. please try again later. thank you.</string>
+    <string name="use_camera">Use Camera</string>
 </resources>

@@ -10,15 +10,19 @@
         tools:layout="@layout/fragment_main_menu"
         android:label="MainMenuFragment">
         <action
-            android:id="@+id/action_mainMenuFragment_to_ProductInfoDialogFragment"
-            app:destination="@id/productInfoDialogFragment" />
-        <action
             android:id="@+id/action_mainMenuFragment_to_settingFragment"
             app:destination="@id/settingFragment"
             app:enterAnim="@anim/slide_in_from_right"
             app:exitAnim="@anim/slide_out_from_left"
             app:popEnterAnim="@anim/slide_in_from_left"
             app:popExitAnim="@anim/slide_out_from_right" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_prepareScanFragment"
+            app:destination="@id/prepareScanFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_right"/>
     </fragment>
     <dialog android:id="@+id/productInfoDialogFragment"
         android:name="com.android.topscare.ui.check.ProductInfoDialogFragment"
@@ -50,5 +54,20 @@
         android:name="com.android.topscare.ui.setting.tutorial.TutorialFragment"
         android:label="TutorialFragment"
         tools:layout="@layout/fragment_tutorial"/>
+    <dialog
+        android:id="@+id/errorDialogFragment"
+        android:name="com.android.topscare.ui.error.ErrorDialogFragment"
+        android:label="ErrorDialogFragment"
+        tools:layout="@layout/fragment_error_dialog"/>
+    <fragment
+        android:id="@+id/prepareScanFragment"
+        android:name="com.android.topscare.ui.scanning.PrepareScanFragment"
+        android:label="PrepareScanFragment"
+        tools:layout="@layout/fragment_prepare_scan">
+        <action
+            android:id="@+id/action_prepareScanFragment_to_productInfoDialogFragment"
+            app:destination="@id/productInfoDialogFragment"
+            />
+    </fragment>
 
 </navigation>
