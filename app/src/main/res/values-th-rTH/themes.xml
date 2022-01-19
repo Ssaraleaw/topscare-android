@@ -5,7 +5,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="background">@android:color/white</item>
-        <item name="android:fontFamily">@font/dmsans_family</item>
+        <item name="android:fontFamily">@font/kanit_family</item>
     </style>
 
     <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Brand -->
-    <color name="primary">#D2146F</color>
+    <color name="primary">#358873</color>
     <color name="secondary">#1D1D1B</color>
-    <color name="green_brand">#358873</color>
+    <color name="green_brand">#D2146F</color>
     <color name="off_white">#F3EBDF</color>
 
     <!--  Tints and Shades  -->

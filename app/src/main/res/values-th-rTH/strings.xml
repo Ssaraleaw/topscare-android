@@ -8,4 +8,13 @@
     <string name="order">สั่งสินค้า</string>
     <string name="receive">ได้รับสินค้า</string>
     <string name="setting">ตั้งค่า</string>
+    <string name="close">ปิด</string>
+    <string name="about_us">ข้อมูลเกี่ยวกับผู้พัฒนา</string>
+    <string name="about_desc"><![CDATA[©Copyright WorldMedic Information & Technology. 1998-2030. www.worldmedic.com]]></string>
+    <string name="url_endpoint">URL Endpoint</string>
+    <string name="tutorial">วิธีการใช้งาน</string>
+    <string name="software_update">อัพเดทซอฟแวร์</string>
+    <string name="scanning_process">ขั้นตอนการสแกน</string>
+    <string name="prepare_master_data">การเตรียมข้อมูล Master</string>
+    <string name="etc">อื่นๆ</string>
 </resources>

@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-
+    api "androidx.browser:browser:${versions.browser}"
     implementation "androidx.core:core-ktx:${versions.core_ktx}"
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"

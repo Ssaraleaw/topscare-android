@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.android.topscare.R
 import com.android.topscare.databinding.FragmentMainMenuBinding
 import com.android.topscare.lib_base.base.BaseFragment
+import com.android.topscare.lib_base.extension.observe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,7 +30,36 @@ class MainMenuFragment : BaseFragment() {
     }
     private fun registerObserver() {
         with(viewModel) {
-
+            observe(_onCountPressed){
+                navigateToCountPage()
+            }
+            observe(_onCheckPressed){
+                navigateToCheckPage()
+            }
+            observe(_onOrderPressed){
+                navigateToOrderPage()
+            }
+            observe(_onReceivePressed){
+                navigateToReceivePage()
+            }
+            observe(_onSettingPressed){
+                navigateToSettingPage()
+            }
         }
+    }
+    private fun navigateToSettingPage(){
+        navController.navigate(MainMenuFragmentDirections.actionMainMenuFragmentToSettingFragment())
+    }
+    private fun navigateToCheckPage(){
+        navController.navigate(R.id.productInfoDialogFragment)
+    }
+    private fun navigateToCountPage(){
+
+    }
+    private fun navigateToOrderPage(){
+
+    }
+    private fun navigateToReceivePage(){
+
     }
 }

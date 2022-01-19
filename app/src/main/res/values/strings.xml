@@ -7,4 +7,13 @@
     <string name="order">Order</string>
     <string name="receive">Receive</string>
     <string name="setting">Setting</string>
+    <string name="close">Close</string>
+    <string name="about_us">About Us</string>
+    <string name="about_desc"><![CDATA[©Copyright WorldMedic Information & Technology. 1998-2030. www.worldmedic.com]]></string>
+    <string name="url_endpoint">URL Endpoint</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="software_update">Software update</string>
+    <string name="scanning_process">Scanning Process</string>
+    <string name="prepare_master_data">Prepare master data</string>
+    <string name="etc">etc.</string>
 </resources>
