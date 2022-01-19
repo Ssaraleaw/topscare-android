@@ -16,7 +16,9 @@ import com.android.topscare.databinding.FragmentPrepareScanBinding
 import com.android.topscare.domain.data.ScanMode
 import com.android.topscare.lib_base.base.BaseFragment
 import com.android.topscare.lib_base.extension.observe
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PrepareScanFragment : BaseFragment() {
     private val viewModel: PrepareScanViewModel by viewModels()
     private lateinit var binding: FragmentPrepareScanBinding

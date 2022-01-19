@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -29,6 +28,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -45,7 +47,6 @@ dependencies {
 
     api "com.google.dagger:dagger:${versions.dagger}"
     api "com.google.dagger:dagger-android-support:${versions.dagger}"
-
     api "com.google.dagger:hilt-android:${versions.hilt}"
     api "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hilt_compiler}"
 

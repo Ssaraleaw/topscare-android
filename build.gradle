@@ -6,7 +6,7 @@
 //}
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.4.31'
     ext.version_code = 8
     ext.version_name = '0.1'
     ext.versions = [

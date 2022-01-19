@@ -1,13 +1,9 @@
 package com.android.topscare
 
-import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -29,8 +25,6 @@ class NavHostActivity : AppCompatActivity() {
         binding.viewModel = navHostViewModel
         setContentView(binding.root)
         makeStatusBarTransparent()
-        val data: Uri? = intent.data
-        Toast.makeText(this,data.toString(),Toast.LENGTH_SHORT).show()
     }
 
     private fun makeStatusBarTransparent() {
@@ -41,10 +35,5 @@ class NavHostActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             statusBarColor = Color.TRANSPARENT
         }
-    }
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
-        val data: Uri? = intent.data
-        Log.d("onNewIntent", data.toString())
     }
 }

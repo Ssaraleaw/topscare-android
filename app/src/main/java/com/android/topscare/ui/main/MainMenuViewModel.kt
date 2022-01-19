@@ -10,8 +10,7 @@ import com.android.topscare.lib_base.state.SingleLiveEvent
 import dagger.hilt.android.qualifiers.ApplicationContext
 
 class MainMenuViewModel @ViewModelInject constructor(
-//    private val getProductByKeyUseCase: GetProductByKeyUseCase
-//    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context
 ) : BaseViewModel<Any>() {
     val _deviceName = MutableLiveData<String>()
     val _onCheckPressed = SingleLiveEvent<Any>()
@@ -25,7 +24,7 @@ class MainMenuViewModel @ViewModelInject constructor(
     }
 
     private fun getDeviceName(): String{
-        return ""//Settings.Global.getString(context.contentResolver, Settings.Global.DEVICE_NAME) ?: Settings.Secure.getString(context.contentResolver, "bluetooth_name")
+        return Settings.Global.getString(context.contentResolver, Settings.Global.DEVICE_NAME) ?: Settings.Secure.getString(context.contentResolver, "bluetooth_name")
     }
 
     fun onCheckPressed(){

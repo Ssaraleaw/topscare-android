@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -57,6 +58,13 @@ dependencies {
     implementation "androidx.core:core-ktx:${versions.core_ktx}"
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
+
+    implementation "com.google.dagger:dagger:${versions.dagger}"
+    implementation "com.google.dagger:dagger-android-support:${versions.dagger}"
+    implementation "com.google.dagger:hilt-android:${versions.hilt}"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hilt_compiler}"
+    kapt "com.google.dagger:hilt-android-compiler:${versions.hilt}"
+    kapt "androidx.hilt:hilt-compiler:${versions.hilt_compiler}"
 
     implementation project(':lib_base')
     testImplementation 'junit:junit:4.13.2'
