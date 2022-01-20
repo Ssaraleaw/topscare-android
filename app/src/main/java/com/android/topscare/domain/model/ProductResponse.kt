@@ -1,7 +1,9 @@
 package com.android.topscare.domain.model
 
+import android.os.Parcelable
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 /**
 {
@@ -14,11 +16,14 @@ import com.google.gson.annotations.SerializedName
 }
 */
 @Keep
+@Parcelize
 data class ProductResponse(
     @SerializedName("product_id") val id: String,
     @SerializedName("product_bname") val name: String?,
     @SerializedName("product_barcode") val barcode: String?,
     @SerializedName("product_commonname") val commonName: String?,
     @SerializedName("product_sale_price") val price: Double,
-    @SerializedName("product_stay") val stay: String,
-)
+    @SerializedName("product_stay") val stay: String?,
+) : Parcelable{
+
+}

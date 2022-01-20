@@ -19,5 +19,8 @@
     <string name="etc">อื่นๆ</string>
     <string name="error">ระบบเกิดข้อผิดพลาด</string>
     <string name="error_desc">ขออภัยระบบไม่สามารถทำรายการได้ในขณะนี้ กรุณาทำรายการใหม่ภายหลัง</string>
-    <string name="use_camera">Use Camera</string>
+    <string name="use_camera">สแกนผ่านกล้อง</string>
+    <string name="fcname">ชื่อสามัญทางยา: %s</string>
+    <string name="fprice">ราคาขาย: %s</string>
+    <string name="fstore">สถานที่เก็บ: %s</string>
 </resources>

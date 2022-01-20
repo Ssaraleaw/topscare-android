@@ -27,7 +27,11 @@
     <dialog android:id="@+id/productInfoDialogFragment"
         android:name="com.android.topscare.ui.check.ProductInfoDialogFragment"
         tools:layout="@layout/fragment_product_info_dialog"
-        android:label="ProductInfoDialogFragment"/>
+        android:label="ProductInfoDialogFragment">
+        <argument
+            app:argType="com.android.topscare.domain.model.ProductResponse"
+            android:name="product"/>
+    </dialog>
     <dialog
         android:id="@+id/aboutDialogFragment"
         android:name="com.android.topscare.ui.setting.about.AboutDialogFragment"

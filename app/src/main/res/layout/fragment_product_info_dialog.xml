@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="viewModel"
             type="com.android.topscare.ui.check.ProductInfoDialogViewModel"/>
@@ -36,25 +37,79 @@
                 android:id="@+id/label_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="left"
                 android:layout_marginTop="@dimen/size_24"
-                style="@style/TextAppearance.Headline4"
-                android:text="test"
+                style="@style/TextAppearance.Headline5"
+                android:text="@{viewModel._name}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
-                app:layout_constraintStart_toStartOf="@id/start_guideline" />
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                tools:text="Product name"
+                />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_10"
-                style="@style/TextAppearance.Body"
-                android:gravity="center"
-                android:text="test"
+                style="@style/TextAppearance.BodyTiny"
+                android:gravity="left"
+                android:text="@{viewModel._barcode}"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                app:layout_constraintTop_toBottomOf="@+id/label_title" />
+                app:layout_constraintTop_toBottomOf="@+id/label_title"
+                tools:text="1234567890"/>
+
+            <View
+                android:id="@+id/layout_divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/size_10"
+                android:layout_marginTop="@dimen/size_10"
+                app:layout_constraintTop_toBottomOf="@id/label_description"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                android:background="@color/gray_200"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_cname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                style="@style/TextAppearance.BodySmall"
+                android:gravity="left"
+                android:text="@{@string/fcname(viewModel._cname)}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/layout_divider"
+                tools:text="Generic name: Paracetamol"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                style="@style/TextAppearance.BodySmall"
+                android:gravity="left"
+                android:text="@{@string/fprice(viewModel._price)}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/label_cname"
+                tools:text="Price: 50 Baht "/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_store"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                style="@style/TextAppearance.BodySmall"
+                android:gravity="left"
+                android:text="@{@string/fstore(viewModel._store)}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/label_price"
+                tools:text="Store: Store#1"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_continue"
@@ -67,7 +122,7 @@
                 android:text="@string/close"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                app:layout_constraintTop_toBottomOf="@id/label_description" />
+                app:layout_constraintTop_toBottomOf="@id/label_store" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

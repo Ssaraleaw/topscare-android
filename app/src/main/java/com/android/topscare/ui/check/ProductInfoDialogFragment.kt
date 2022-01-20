@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.android.topscare.R
 import com.android.topscare.databinding.FragmentProductInfoDialogBinding
 import com.android.topscare.lib_base.base.BaseDialogFragment
@@ -15,7 +16,7 @@ import com.android.topscare.lib_base.extension.observe
 class ProductInfoDialogFragment : BaseDialogFragment() {
     lateinit var binding: FragmentProductInfoDialogBinding
     private val viewModel: ProductInfoDialogViewModel by viewModels()
-
+    private val args by navArgs<ProductInfoDialogFragmentArgs>()
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentProductInfoDialogBinding.inflate(LayoutInflater.from(context), null, false)
         val builder = AlertDialog.Builder(requireActivity(), R.style.AlertDialog)
@@ -31,6 +32,9 @@ class ProductInfoDialogFragment : BaseDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        args.product?.let{
+            viewModel.init(product = it)
+        }
         registerObserver()
     }
 

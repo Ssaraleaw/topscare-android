@@ -5,18 +5,23 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.os.Vibrator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.android.topscare.NavHostViewModel
+import com.android.topscare.R
 import com.android.topscare.databinding.FragmentPrepareScanBinding
 import com.android.topscare.domain.data.ScanMode
+import com.android.topscare.domain.model.ProductResponse
 import com.android.topscare.lib_base.base.BaseFragment
 import com.android.topscare.lib_base.extension.observe
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.Exception
+
 
 @AndroidEntryPoint
 class PrepareScanFragment : BaseFragment() {
@@ -46,8 +51,47 @@ class PrepareScanFragment : BaseFragment() {
             observe(_onBackPressed) {
                 navController.popBackStack()
             }
+            observe(_product){
+                when(navHostViewModel.scanMode.value){
+                    ScanMode.CHECK ->{
+                        navigateToCheckDialog(it)
+                    }
+                    ScanMode.COUNT ->{
+
+                    }
+                    ScanMode.ORDER ->{
+
+                    }
+                    ScanMode.RECEIVE ->{
+
+                    }
+                }
+            }
         }
     }
+
+    private fun navigateToCheckDialog(product: ProductResponse) {
+        try {
+            if (navController.currentDestination?.id == R.id.prepareScanFragment) {
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToProductInfoDialogFragment(
+                        product
+                    )
+                )
+            } else {
+                navController.popBackStack(R.id.prepareScanFragment, false)
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToProductInfoDialogFragment(
+                        product
+                    )
+                )
+            }
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
+    }
+
+
     override fun onResume() {
         super.onResume()
         //Register receiver so my app can listen for intents which action is ACTION_BARCODE_DATA
@@ -57,14 +101,16 @@ class PrepareScanFragment : BaseFragment() {
         //Will setup the new configuration of the scanner.
         claimScanner()
     }
-
-
+    @androidx.annotation.RequiresPermission(value = "android.permission.VIBRATE")
+    private fun doVibrate(){
+        val v = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator?
+        v!!.vibrate(300)
+    }
     private val barcodeDataReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            Toast.makeText(context, "Received the Broadcast Intent", Toast.LENGTH_SHORT).show()
             val action = intent.action
-            println("Action Received: $action")
             if (ACTION_BARCODE_DATA == action) {
+                doVibrate()
                 /*
                 These extras are available:
                     "version" (int) = Data Intent Api version
@@ -97,7 +143,6 @@ class PrepareScanFragment : BaseFragment() {
                         data, charset, dataBytesStr, aimId, codeId, timestamp
                     )
                     data?.let {
-                        Toast.makeText(requireContext(),it,Toast.LENGTH_SHORT).show()
                         viewModel.getProductByKey(key = it)
                     }
                 }

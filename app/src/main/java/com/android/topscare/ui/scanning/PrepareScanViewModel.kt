@@ -19,7 +19,7 @@ class PrepareScanViewModel @ViewModelInject constructor(
     val _onBackPressed = SingleLiveEvent<Any>()
     val _onCameraPressed = SingleLiveEvent<Any>()
     val _scanMode = SingleLiveEvent<ScanMode>()
-    val _product = MutableLiveData<ProductResponse>()
+    val _product = SingleLiveEvent<ProductResponse>()
     val _title = MutableLiveData<String>()
     fun init(scanMode : ScanMode){
         _scanMode.value = scanMode
@@ -47,7 +47,7 @@ class PrepareScanViewModel @ViewModelInject constructor(
 
     fun getProductByKey(key: String) = launchRequest {
         getProductByKeyUseCase(input = key)?.let {
-            _product.value = it
+            _product.postValue(it)
         }
         _dataStates.postValue(DataState.Success(getViewState()))
     }
