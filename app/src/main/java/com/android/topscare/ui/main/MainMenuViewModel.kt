@@ -24,7 +24,7 @@ class MainMenuViewModel @ViewModelInject constructor(
     }
 
     private fun getDeviceName(): String{
-        return Settings.Global.getString(context.contentResolver, Settings.Global.DEVICE_NAME) ?: Settings.Secure.getString(context.contentResolver, "bluetooth_name")
+        return "HH-Name: "+Settings.Global.getString(context.contentResolver, Settings.Global.DEVICE_NAME) ?: Settings.Secure.getString(context.contentResolver, "bluetooth_name")
     }
 
     fun onCheckPressed(){

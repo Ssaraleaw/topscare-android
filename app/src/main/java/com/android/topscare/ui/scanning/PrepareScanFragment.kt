@@ -9,7 +9,7 @@ import android.os.Vibrator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.getSystemService
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.android.topscare.NavHostViewModel
@@ -19,8 +19,10 @@ import com.android.topscare.domain.data.ScanMode
 import com.android.topscare.domain.model.ProductResponse
 import com.android.topscare.lib_base.base.BaseFragment
 import com.android.topscare.lib_base.extension.observe
+import com.journeyapps.barcodescanner.ScanContract
+import com.journeyapps.barcodescanner.ScanIntentResult
+import com.journeyapps.barcodescanner.ScanOptions
 import dagger.hilt.android.AndroidEntryPoint
-import java.lang.Exception
 
 
 @AndroidEntryPoint
@@ -28,6 +30,18 @@ class PrepareScanFragment : BaseFragment() {
     private val viewModel: PrepareScanViewModel by viewModels()
     private lateinit var binding: FragmentPrepareScanBinding
     private val navHostViewModel: NavHostViewModel by activityViewModels()
+    private val barcodeLauncher = registerForActivityResult(
+        ScanContract()
+    ) { result: ScanIntentResult ->
+        if (result.contents == null) {
+            Toast.makeText(requireContext(), "Cancelled", Toast.LENGTH_LONG).show()
+        } else {
+            doVibrate()
+            result.contents?.let {
+                viewModel.getProductByKey(key = it)
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +65,9 @@ class PrepareScanFragment : BaseFragment() {
             observe(_onBackPressed) {
                 navController.popBackStack()
             }
+            observe(_onCameraPressed){
+                openCameraToScan()
+            }
             observe(_product){
                 when(navHostViewModel.scanMode.value){
                     ScanMode.CHECK ->{
@@ -67,7 +84,21 @@ class PrepareScanFragment : BaseFragment() {
                     }
                 }
             }
+            observe(dataStates){
+                if(dataStates.value?.isError() == true){
+                    navigateToError()
+                }
+            }
         }
+    }
+
+    private fun openCameraToScan() {
+        val options = ScanOptions()
+        options.setOrientationLocked(false)
+        barcodeLauncher.launch(options)
+    }
+    private fun navigateToError() {
+        navController.navigate(R.id.errorDialogFragment)
     }
 
     private fun navigateToCheckDialog(product: ProductResponse) {
@@ -193,7 +224,6 @@ class PrepareScanFragment : BaseFragment() {
         requireContext().sendBroadcast(intent)
     }
 
-
     private fun bytesToHexString(array: ByteArray?): String {
         var s = "[]"
         array?.let {
@@ -205,7 +235,6 @@ class PrepareScanFragment : BaseFragment() {
         }
         return s
     }
-
 
     companion object {
         const val ACTION_BARCODE_DATA = "com.android.topscare.ui.scanning.BARCODE"

@@ -40,6 +40,10 @@
                 <data android:scheme="topscare" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
         <meta-data
             android:name="io.sentry.dsn"
             android:value="https://af89297c830e4f00afe0b7102c64cb20@o556153.ingest.sentry.io/5686652" />
