@@ -12,6 +12,7 @@ import com.android.topscare.lib_base.state.SingleLiveEvent
 class ReceiveDialogViewModel @ViewModelInject constructor(
 
 ) : BaseViewModel<Unit>(){
+    val _id = MutableLiveData<String>()
     val _onClosePressed = SingleLiveEvent<Any>()
     val _onDatePickPressed = SingleLiveEvent<Any>()
     val _name = MutableLiveData<String>()
@@ -40,6 +41,9 @@ class ReceiveDialogViewModel @ViewModelInject constructor(
         _expUiState.value = DataState.Success(Unit)
         product.barcode?.let {
             _barcode.value = it
+        }
+        product.id?.let {
+            _id.value = it
         }
         _name.value = if(product.name.isNullOrEmpty()) "N/A" else product.name
         _cname.value = if(product.commonName.isNullOrEmpty()) "N/A" else product.commonName

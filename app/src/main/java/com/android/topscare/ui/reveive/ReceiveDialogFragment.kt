@@ -12,8 +12,13 @@ import androidx.navigation.fragment.navArgs
 import com.android.topscare.NavHostViewModel
 import com.android.topscare.R
 import com.android.topscare.databinding.FragmentReceiveDialogBinding
+import com.android.topscare.domain.model.OrderRequest
+import com.android.topscare.domain.model.ReceiveRequest
 import com.android.topscare.lib_base.base.BaseDialogFragment
+import com.android.topscare.lib_base.base.Event
+import com.android.topscare.lib_base.extension.isDateFormat
 import com.android.topscare.lib_base.extension.observe
+import com.android.topscare.lib_base.state.DataState
 import com.android.topscare.ui.count.CountDialogFragmentArgs
 
 class ReceiveDialogFragment : BaseDialogFragment() {
@@ -21,7 +26,7 @@ class ReceiveDialogFragment : BaseDialogFragment() {
     private val viewModel: ReceiveDialogViewModel by viewModels()
     private val args by navArgs<CountDialogFragmentArgs>()
     private val navHostViewModel: NavHostViewModel by activityViewModels()
-    
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentReceiveDialogBinding.inflate(LayoutInflater.from(context), null, false)
         val builder = AlertDialog.Builder(requireActivity(), R.style.AlertDialog)
@@ -47,6 +52,55 @@ class ReceiveDialogFragment : BaseDialogFragment() {
         with(viewModel){
             observe(_onClosePressed){
                 navController.popBackStack()
+            }
+            observe(_onSavePressed){
+                viewModel._amountUiState.postValue(validateAmount())
+                viewModel._lotUiState.postValue(validateLotNo())
+                viewModel._expUiState.postValue(validateExpDate())
+                if (validateAmount().isError() != true &&
+                    validateLotNo().isError() != true &&
+                    validateExpDate().isError() != true){
+                    viewModel._id.value?.let {
+                        navHostViewModel._doReceive.value = ReceiveRequest(
+                            it,
+                            (viewModel._amount.value?:"0").toInt(),
+                            viewModel._exp.value?:"",
+                            (viewModel._lot.value?:"0").toInt(),
+                            "" )
+                    }
+                    navController.popBackStack()
+                }
+            }
+        }
+    }
+
+    private fun validateAmount() : DataState<Unit> {
+        return when {
+            viewModel._amount.value.isNullOrBlank() || viewModel._amount.value!!.toInt() <= 0 -> {
+                DataState.Error(Unit, Event(Exception(getString(R.string.label_error_data_empty))))
+            }
+            else -> {
+                DataState.Success(Unit)
+            }
+        }
+    }
+    private fun validateLotNo() : DataState<Unit> {
+        return when {
+            viewModel._lot.value.isNullOrBlank() || viewModel._lot.value!!.toInt() <= 0 -> {
+                DataState.Error(Unit, Event(Exception(getString(R.string.label_error_data_empty))))
+            }
+            else -> {
+                DataState.Success(Unit)
+            }
+        }
+    }
+    private fun validateExpDate() : DataState<Unit> {
+        return when {
+            viewModel._exp.value.isNullOrBlank() || !viewModel._exp.value!!.isDateFormat("yyyy-MM-dd")-> {
+                DataState.Error(Unit, Event(Exception(getString(R.string.label_error_data_empty))))
+            }
+            else -> {
+                DataState.Success(Unit)
             }
         }
     }

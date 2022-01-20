@@ -34,6 +34,6 @@
     <string name="confirm_to_add_product">ยืนยันได้รับสินค้า</string>
     <string name="label_lot_no">Lot no.</string>
     <string name="hint_lot_no">กรุณาระบุเลข Lot</string>
-    <string name="hint_exp_date">24/01/2022</string>
+    <string name="hint_exp_date">2022-01-24</string>
     <string name="label_exp_date">วันหมดอายุ</string>
 </resources>

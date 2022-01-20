@@ -111,7 +111,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/size_16"
                     app:hint="@{@string/hint_exp_date}"
-                    app:maxLength="@{6}"
+                    app:maxLength="@{10}"
                     app:text="@={viewModel._exp}"
                     app:title="@{@string/label_exp_date}"
                     app:uiState="@{viewModel._expUiState}" />

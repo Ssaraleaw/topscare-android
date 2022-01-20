@@ -1,14 +1,19 @@
 package com.android.topscare.lib_base.extension
 
 import android.net.Uri
+import android.os.Parcel
 import android.text.Html
 import android.util.Patterns
 import android.widget.TextView
 import androidx.core.text.HtmlCompat.FROM_HTML_MODE_LEGACY
 import androidx.core.util.PatternsCompat
 import androidx.databinding.BindingAdapter
-import java.lang.Exception
+import com.google.android.material.datepicker.CalendarConstraints
+import java.text.DateFormat
 import java.text.DecimalFormat
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.regex.Pattern
 
 fun String.isEmail(): Boolean = PatternsCompat.EMAIL_ADDRESS.matcher(this).matches()
@@ -23,6 +28,21 @@ fun String.isPhoneNumber(): Boolean {
         return Pattern.compile("[0-9]{10}\$").matcher(this).matches()
     }
     return false
+}
+fun String.isDateFormat(dateFormat: String) : Boolean{
+    return try {
+        doFormatDate(this,dateFormat)
+        true
+    }catch (ex: ParseException){
+        false
+    }
+}
+
+@Throws(ParseException::class)
+fun doFormatDate(dateStr: String, formatSrt : String) {
+    var formatter = SimpleDateFormat(formatSrt, Locale.getDefault())
+    val date = formatter.parse(dateStr)
+    println(date)
 }
 
 @BindingAdapter("app:htmlText")

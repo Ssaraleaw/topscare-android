@@ -33,6 +33,6 @@
     <string name="confirm_to_add_product">Confirm to add product</string>
     <string name="label_lot_no">Lot no.</string>
     <string name="hint_lot_no">Please enter Lot no.</string>
-    <string name="hint_exp_date">24/01/2022</string>
+    <string name="hint_exp_date">2022-01-24</string>
     <string name="label_exp_date">Expire date</string>
 </resources>
