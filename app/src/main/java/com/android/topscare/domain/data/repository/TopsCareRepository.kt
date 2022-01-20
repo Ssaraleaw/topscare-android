@@ -8,7 +8,7 @@ import javax.inject.Inject
 class TopsCareRepository @Inject constructor(
     private val api: Api
 ){
-    suspend fun getProductByKey(key: String): ProductResponse{
-        return doRequest { api.searchProduct(key = key) }
+    suspend fun getProductByKey(key: String): ProductResponse?{
+        return doRequest { api.searchProduct(key = key).data }
     }
 }

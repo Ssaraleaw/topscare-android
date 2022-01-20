@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetProductByKeyUseCase @Inject constructor(
     private val repository: TopsCareRepository
 ){
-    suspend operator fun invoke(input: String) : ProductResponse {
+    suspend operator fun invoke(input: String) : ProductResponse? {
         return repository.getProductByKey(input)
     }
 }

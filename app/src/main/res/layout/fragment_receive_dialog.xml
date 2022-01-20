@@ -103,12 +103,12 @@
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
                 app:layout_constraintTop_toBottomOf="@id/edt_amount">
 
-                <com.android.topscare.lib_base.customview.TopsCareNumberTextField
+                <com.android.topscare.lib_base.customview.TopsCareTextField
                     android:id="@+id/edt_exp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_marginRight="@dimen/size_4"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/size_16"
                     app:hint="@{@string/hint_exp_date}"
                     app:maxLength="@{6}"
@@ -121,7 +121,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_marginLeft="@dimen/size_4"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/size_16"
                     app:hint="@{@string/hint_lot_no}"
                     app:maxLength="@{6}"

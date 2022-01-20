@@ -13,6 +13,7 @@ class ReceiveDialogViewModel @ViewModelInject constructor(
 
 ) : BaseViewModel<Unit>(){
     val _onClosePressed = SingleLiveEvent<Any>()
+    val _onDatePickPressed = SingleLiveEvent<Any>()
     val _name = MutableLiveData<String>()
     val _cname = MutableLiveData<String>()
     val _price = MutableLiveData<String>()
@@ -32,8 +33,11 @@ class ReceiveDialogViewModel @ViewModelInject constructor(
     fun onSavePressed(){
         _onSavePressed()
     }
-
+    fun onDatePickPressed(){
+        _onDatePickPressed()
+    }
     fun init(product : ProductResponse){
+        _expUiState.value = DataState.Success(Unit)
         product.barcode?.let {
             _barcode.value = it
         }

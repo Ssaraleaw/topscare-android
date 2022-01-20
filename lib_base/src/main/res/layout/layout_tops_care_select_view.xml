@@ -44,43 +44,51 @@
             android:id="@+id/textFieldTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="@{isTextFocused}"
             android:text="@{title}"
+            android:enabled="@{isTextFocused}"
             android:textAppearance="@style/TextAppearance.BodySmall"
-            android:textColor="@color/gray_700"
+            android:textColor="@color/gray_600"
             app:isVisible="@{title.length() > 0}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tool:text="Tile" />
+            tool:text="Tile"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/layout_select_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:background="@{(uiState.isDisable())? @drawable/bg_input_field_disable : (uiState.isError()) ? @drawable/bg_input_field_decoration_error : @drawable/bg_input_field_decoration}"
-            android:drawableEnd="@{endTextDrawable}"
-            android:ellipsize="end"
-            android:hint="@{hint}"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:maxLength="@{maxLength}"
-            android:maxLines="1"
-            android:paddingStart="10dp"
-            android:paddingTop="12dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="12dp"
-            android:text="@={text}"
-            android:textAppearance="@style/TextAppearance.BodyTiny"
-            android:textColor="@{(uiState.isDisable())? @color/gray_500 : @color/gray_700}"
-            android:textColorHint="@color/gray_400"
-            android:textIsSelectable="false"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textFieldTitleTextView"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:textAppearance="@style/TextAppearance.BodyTiny"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:hint="@{hint}"
+                android:maxLength="@{maxLength}"
+                android:maxLines="1"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                android:inputType="text"
+                android:text="@={text}"
+                android:drawableEnd="@{endTextDrawable}"
+                android:paddingStart="10dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:textColorHint="@color/gray_400"
+                android:textColor="@{(uiState.isDisable())? @color/gray_500 : @color/gray_700}"
+                android:background="@{(uiState.isDisable())? @drawable/bg_input_field_disable : (uiState.isError()) ? @drawable/bg_input_field_decoration_error : @drawable/bg_input_field_decoration}"
+                />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textFieldErrorTextView"
@@ -92,8 +100,8 @@
             android:textColor="@color/error"
             app:isVisible="@{uiState.isError()}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editText"
-            tool:text="Here’s a hint that might help you." />
+            app:layout_constraintTop_toBottomOf="@id/layout_select_text"
+            tool:text="Here’s a hint that might help you."/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

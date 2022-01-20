@@ -117,5 +117,4 @@
             app:argType="com.android.topscare.domain.model.ProductResponse"
             android:name="product"/>
     </dialog>
-
 </navigation>
