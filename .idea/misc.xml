@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/activity_nav_host.xml" value="0.23278985507246377" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/fragment_about_dialog.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_edit_url_enpoint_dialog.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/fragment_error_dialog.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/fragment_getting_started.xml" value="0.159375" />
         <entry key="app/src/main/res/layout/fragment_main_menu.xml" value="0.3576271186440678" />
@@ -30,6 +31,10 @@
         <entry key="app/src/main/res/layout/fragment_tutorial.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/layout_menu.xml" value="0.335" />
         <entry key="app/src/main/res/layout/splash_fragment.xml" value="0.25" />
+        <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration.xml" value="0.186" />
+        <entry key="lib_base/src/main/res/layout/layout_tops_care_number_text_field.xml" value="0.1933876811594203" />
+        <entry key="lib_base/src/main/res/layout/layout_tops_care_text_field.xml" value="0.1734375" />
+        <entry key="lib_base/src/main/res/layout/layout_tops_care_textfield.xml" value="0.1933876811594203" />
       </map>
     </option>
   </component>

@@ -52,6 +52,9 @@
             app:exitAnim="@anim/slide_out_from_left"
             app:popEnterAnim="@anim/slide_in_from_left"
             app:popExitAnim="@anim/slide_out_from_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_editUrlEndpointDialogFragment"
+            app:destination="@id/editUrlEndpointDialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/tutorialFragment"
@@ -73,5 +76,10 @@
             app:destination="@id/productInfoDialogFragment"
             />
     </fragment>
+    <dialog
+        android:id="@+id/editUrlEndpointDialogFragment"
+        android:name="com.android.topscare.ui.setting.url_endpoint.EditUrlEndpointDialogFragment"
+        android:label="EditUrlEndpointDialogFragment"
+        tools:layout="@layout/fragment_edit_url_enpoint_dialog"/>
 
 </navigation>

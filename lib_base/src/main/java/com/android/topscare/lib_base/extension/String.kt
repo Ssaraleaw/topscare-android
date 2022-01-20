@@ -2,6 +2,7 @@ package com.android.topscare.lib_base.extension
 
 import android.net.Uri
 import android.text.Html
+import android.util.Patterns
 import android.widget.TextView
 import androidx.core.text.HtmlCompat.FROM_HTML_MODE_LEGACY
 import androidx.core.util.PatternsCompat
@@ -11,6 +12,7 @@ import java.text.DecimalFormat
 import java.util.regex.Pattern
 
 fun String.isEmail(): Boolean = PatternsCompat.EMAIL_ADDRESS.matcher(this).matches()
+fun String.isValidUrl(): Boolean = Patterns.WEB_URL.matcher(this).matches()
 fun String.toUri(): Uri = Uri.parse(this)
 fun String.toFormattedHtml(): String = this.replace("<blockquote>", "<p>").replace("</blockquote>", "</p>")
 fun String.isPhoneNumber(): Boolean {

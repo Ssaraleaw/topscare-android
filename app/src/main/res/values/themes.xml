@@ -8,10 +8,6 @@
         <item name="android:fontFamily">@font/dmsans_family</item>
     </style>
 
-    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:windowBackground">@android:color/transparent</item>
-    </style>
-
     <style name="ActionButtonTheme.Primary" parent="Theme.MaterialComponents.Light">
         <item name="android:layout_height">@dimen/size_60</item>
         <item name="android:textSize">@dimen/text_size_18</item>

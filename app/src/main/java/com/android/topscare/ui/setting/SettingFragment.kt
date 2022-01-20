@@ -11,7 +11,9 @@ import com.android.topscare.databinding.FragmentSettingBinding
 import com.android.topscare.lib_base.base.BaseFragment
 import com.android.topscare.lib_base.extension.observe
 import com.android.topscare.lib_base.extension.showChromeCustomTab
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SettingFragment : BaseFragment() {
     private val viewModel: SettingViewModel by viewModels()
     private lateinit var binding: FragmentSettingBinding
@@ -42,7 +44,14 @@ class SettingFragment : BaseFragment() {
             observe(_onSoftwareUpdatePressed){
                 navigateToUpdatePage()
             }
+            observe(_onUrlEndpointPressed){
+                navigateToEditUrlPage()
+            }
         }
+    }
+
+    private fun navigateToEditUrlPage() {
+        navController.navigate(SettingFragmentDirections.actionSettingFragmentToEditUrlEndpointDialogFragment())
     }
 
     private fun navigateToAboutUsPage() {
