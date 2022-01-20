@@ -24,4 +24,15 @@
     <string name="fstore">Store: %s</string>
     <string name="save">Save</string>
     <string name="label_error_data_empty">Input data is not correct.</string>
+    <string name="show_all_history">Show all history</string>
+    <string name="amount">Amount</string>
+    <string name="hint_amount">Please enter amount</string>
+    <string name="make_an_order">Make an order</string>
+    <string name="hint_free_amount">Please enter free amount</string>
+    <string name="free_amount">Free amount</string>
+    <string name="confirm_to_add_product">Confirm to add product</string>
+    <string name="label_lot_no">Lot no.</string>
+    <string name="hint_lot_no">Please enter Lot no.</string>
+    <string name="hint_exp_date">Please enter expire date.</string>
+    <string name="label_exp_date">Expire date</string>
 </resources>

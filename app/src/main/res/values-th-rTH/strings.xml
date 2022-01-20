@@ -25,4 +25,15 @@
     <string name="fstore">สถานที่เก็บ: %s</string>
     <string name="save">บันทึก</string>
     <string name="label_error_data_empty">กรุณาระบุข้อมูลให้ถูกต้อง</string>
+    <string name="show_all_history">แสดงประวัติทำรายการ</string>
+    <string name="amount">จำนวน</string>
+    <string name="hint_amount">กรุณาระบุจำนวน</string>
+    <string name="make_an_order">เพิ่มรายการสั่งซื้อ</string>
+    <string name="hint_free_amount">กรุณาระบุจำนวนแถม</string>
+    <string name="free_amount">จำนวนแถม</string>
+    <string name="confirm_to_add_product">ยืนยันได้รับสินค้า</string>
+    <string name="label_lot_no">Lot no.</string>
+    <string name="hint_lot_no">กรุณาระบุเลข Lot</string>
+    <string name="hint_exp_date">กรุณาระบุวันหมดอายุ</string>
+    <string name="label_exp_date">วันหมดอายุ</string>
 </resources>

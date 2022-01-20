@@ -36,7 +36,6 @@ class MainMenuFragment : BaseFragment() {
         with(viewModel) {
             observe(_onCountPressed){
                 navigateToCountPage()
-//                navigateToErrorPage()
             }
             observe(_onCheckPressed){
                 navigateToCheckPage()

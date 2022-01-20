@@ -75,11 +75,47 @@
             android:id="@+id/action_prepareScanFragment_to_productInfoDialogFragment"
             app:destination="@id/productInfoDialogFragment"
             />
+        <action
+            android:id="@+id/action_prepareScanFragment_to_countDialogFragment"
+            app:destination="@id/countDialogFragment" />
+        <action
+            android:id="@+id/action_prepareScanFragment_to_orderDialogFragment"
+            app:destination="@id/orderDialogFragment" />
+        <action
+            android:id="@+id/action_prepareScanFragment_to_receiveDialogFragment"
+            app:destination="@id/receiveDialogFragment" />
     </fragment>
     <dialog
         android:id="@+id/editUrlEndpointDialogFragment"
         android:name="com.android.topscare.ui.setting.url_endpoint.EditUrlEndpointDialogFragment"
         android:label="EditUrlEndpointDialogFragment"
         tools:layout="@layout/fragment_edit_url_enpoint_dialog"/>
+    <dialog
+        android:id="@+id/countDialogFragment"
+        android:name="com.android.topscare.ui.count.CountDialogFragment"
+        android:label="CountDialogFragment"
+        tools:layout="@layout/fragment_count_dialog">
+        <argument
+            app:argType="com.android.topscare.domain.model.ProductResponse"
+            android:name="product"/>
+    </dialog>
+    <dialog
+        android:id="@+id/orderDialogFragment"
+        android:name="com.android.topscare.ui.order.OrderDialogFragment"
+        android:label="OrderDialogFragment"
+        tools:layout="@layout/fragment_order_dialog">
+        <argument
+            app:argType="com.android.topscare.domain.model.ProductResponse"
+            android:name="product"/>
+    </dialog>
+    <dialog
+        android:id="@+id/receiveDialogFragment"
+        android:name="com.android.topscare.ui.reveive.ReceiveDialogFragment"
+        android:label="ReceiveDialogFragment"
+        tools:layout="@layout/fragment_receive_dialog">
+        <argument
+            app:argType="com.android.topscare.domain.model.ProductResponse"
+            android:name="product"/>
+    </dialog>
 
 </navigation>

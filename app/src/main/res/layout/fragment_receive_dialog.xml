@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.android.topscare.ui.reveive.ReceiveDialogViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size_16"
+        app:cardElevation="@dimen/size_10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/size_20">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/page_side_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/page_side_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/status_bar_height" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_title"
+                style="@style/TextAppearance.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_24"
+                android:gravity="left"
+                android:text="@{viewModel._name}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Product name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_description"
+                style="@style/TextAppearance.BodyTiny"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                android:gravity="left"
+                android:text="@{viewModel._barcode}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/label_title"
+                tools:text="1234567890" />
+
+            <View
+                android:id="@+id/layout_divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/size_10"
+                android:layout_marginBottom="@dimen/size_10"
+                android:background="@color/gray_200"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/label_description" />
+
+            <com.android.topscare.lib_base.customview.TopsCareNumberTextField
+                android:id="@+id/edt_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16"
+                app:hint="@{@string/hint_amount}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/layout_divider"
+                app:maxLength="@{6}"
+                app:text="@={viewModel._amount}"
+                app:title="@{@string/amount}"
+                app:uiState="@{viewModel._amountUiState}" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_data1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/edt_amount">
+
+                <com.android.topscare.lib_base.customview.TopsCareNumberTextField
+                    android:id="@+id/edt_exp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/size_4"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_16"
+                    app:hint="@{@string/hint_exp_date}"
+                    app:maxLength="@{6}"
+                    app:text="@={viewModel._exp}"
+                    app:title="@{@string/label_exp_date}"
+                    app:uiState="@{viewModel._expUiState}" />
+
+                <com.android.topscare.lib_base.customview.TopsCareNumberTextField
+                    android:id="@+id/edt_lot_no"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/size_4"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_16"
+                    app:hint="@{@string/hint_lot_no}"
+                    app:maxLength="@{6}"
+                    app:text="@={viewModel._lot}"
+                    app:title="@{@string/label_lot_no}"
+                    app:uiState="@{viewModel._lotUiState}" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_continue"
+                style="@style/ActionButtonTheme.Primary"
+                android:layout_width="@dimen/size_0"
+                android:layout_marginStart="@dimen/size_14"
+                android:layout_marginTop="@dimen/size_24"
+                android:layout_marginEnd="@dimen/size_14"
+                android:enabled="@{viewModel._amount.length()>0}"
+                android:onClick="@{() -> viewModel.onSavePressed()}"
+                android:text="@string/confirm_to_add_product"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/layout_data1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_scan"
+                style="@style/ActionButtonTheme.Secondary"
+                android:layout_width="@dimen/size_0"
+                android:layout_marginStart="@dimen/size_14"
+                android:layout_marginEnd="@dimen/size_14"
+                android:onClick="@{() -> viewModel.onClosePressed()}"
+                android:text="@string/close"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/button_continue" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

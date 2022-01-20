@@ -74,13 +74,13 @@ class PrepareScanFragment : BaseFragment() {
                         navigateToCheckDialog(it)
                     }
                     ScanMode.COUNT ->{
-
+                        navigateToCountPage(it)
                     }
                     ScanMode.ORDER ->{
-
+                        navigateToOrderPage(it)
                     }
                     ScanMode.RECEIVE ->{
-
+                        navigateToReceivePage(it)
                     }
                 }
             }
@@ -122,6 +122,68 @@ class PrepareScanFragment : BaseFragment() {
         }
     }
 
+    private fun navigateToCountPage(product: ProductResponse){
+        try {
+            if (navController.currentDestination?.id == R.id.prepareScanFragment) {
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToCountDialogFragment(
+                        product
+                    )
+                )
+            } else {
+                navController.popBackStack(R.id.prepareScanFragment, false)
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToCountDialogFragment(
+                        product
+                    )
+                )
+            }
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
+    }
+
+    private fun navigateToOrderPage(product: ProductResponse){
+        try {
+            if (navController.currentDestination?.id == R.id.prepareScanFragment) {
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToOrderDialogFragment(
+                        product
+                    )
+                )
+            } else {
+                navController.popBackStack(R.id.prepareScanFragment, false)
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToOrderDialogFragment(
+                        product
+                    )
+                )
+            }
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
+    }
+
+    private fun navigateToReceivePage(product: ProductResponse){
+        try {
+            if (navController.currentDestination?.id == R.id.prepareScanFragment) {
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToReceiveDialogFragment(
+                        product
+                    )
+                )
+            } else {
+                navController.popBackStack(R.id.prepareScanFragment, false)
+                navController.navigate(
+                    PrepareScanFragmentDirections.actionPrepareScanFragmentToReceiveDialogFragment(
+                        product
+                    )
+                )
+            }
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
+    }
 
     override fun onResume() {
         super.onResume()
