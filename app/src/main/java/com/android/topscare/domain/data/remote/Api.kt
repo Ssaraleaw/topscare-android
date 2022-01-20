@@ -1,7 +1,9 @@
 package com.android.topscare.domain.data.remote
 
 import com.android.topscare.domain.model.CountRequest
+import com.android.topscare.domain.model.OrderRequest
 import com.android.topscare.domain.model.ProductResponse
+import com.android.topscare.domain.model.ReceiveRequest
 import com.android.topscare.lib_base.network.NetworkResponseWrapper
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -14,4 +16,10 @@ interface Api {
 
     @POST("topscare/index.php/product/count")
     suspend fun addCountProduct(@Body countRequest : CountRequest): NetworkResponseWrapper<Any>
+
+    @POST("topscare/index.php/product/order")
+    suspend fun insertOrderProduct(@Body orderRequest : OrderRequest): NetworkResponseWrapper<Any>
+
+    @POST("topscare/index.php/product/receive")
+    suspend fun insertReceiveProduct(@Body receiveRequest : ReceiveRequest): NetworkResponseWrapper<Any>
 }

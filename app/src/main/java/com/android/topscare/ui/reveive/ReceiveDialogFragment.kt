@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.android.topscare.NavHostViewModel
 import com.android.topscare.R
 import com.android.topscare.databinding.FragmentReceiveDialogBinding
 import com.android.topscare.lib_base.base.BaseDialogFragment
@@ -18,6 +20,8 @@ class ReceiveDialogFragment : BaseDialogFragment() {
     lateinit var binding: FragmentReceiveDialogBinding
     private val viewModel: ReceiveDialogViewModel by viewModels()
     private val args by navArgs<CountDialogFragmentArgs>()
+    private val navHostViewModel: NavHostViewModel by activityViewModels()
+    
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentReceiveDialogBinding.inflate(LayoutInflater.from(context), null, false)
         val builder = AlertDialog.Builder(requireActivity(), R.style.AlertDialog)

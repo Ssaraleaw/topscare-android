@@ -13,6 +13,9 @@ class OrderDialogViewModel @ViewModelInject constructor(
 
 ) : BaseViewModel<Unit>(){
     val _onClosePressed = SingleLiveEvent<Any>()
+    val _onSavePressed = SingleLiveEvent<Any>()
+
+    val _id = MutableLiveData<String>()
     val _name = MutableLiveData<String>()
     val _cname = MutableLiveData<String>()
     val _price = MutableLiveData<String>()
@@ -22,7 +25,6 @@ class OrderDialogViewModel @ViewModelInject constructor(
     val _amount = MutableLiveData<String>()
     val _free_amount = MutableLiveData<String>()
     val _freeAmountUiState = MediatorLiveData<DataState<Unit>>()
-    val _onSavePressed = SingleLiveEvent<Any>()
 
     fun onClosePressed(){
         _onClosePressed()
@@ -34,6 +36,9 @@ class OrderDialogViewModel @ViewModelInject constructor(
     fun init(product : ProductResponse){
         product.barcode?.let {
             _barcode.value = it
+        }
+        product.id?.let {
+            _id.value = it
         }
         _name.value = if(product.name.isNullOrEmpty()) "N/A" else product.name
         _cname.value = if(product.commonName.isNullOrEmpty()) "N/A" else product.commonName

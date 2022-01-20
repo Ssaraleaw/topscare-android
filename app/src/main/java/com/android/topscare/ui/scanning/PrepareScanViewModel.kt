@@ -7,10 +7,10 @@ import androidx.lifecycle.MutableLiveData
 import com.android.topscare.R
 import com.android.topscare.domain.data.ScanMode
 import com.android.topscare.domain.model.CountRequest
+import com.android.topscare.domain.model.OrderRequest
 import com.android.topscare.domain.model.ProductResponse
-import com.android.topscare.domain.usecase.AppSettingUseCase
-import com.android.topscare.domain.usecase.GetProductByKeyUseCase
-import com.android.topscare.domain.usecase.InsertCountProductUseCase
+import com.android.topscare.domain.model.ReceiveRequest
+import com.android.topscare.domain.usecase.*
 import com.android.topscare.lib_base.base.BaseViewModel
 import com.android.topscare.lib_base.base.Event
 import com.android.topscare.lib_base.state.DataState
@@ -20,6 +20,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 class PrepareScanViewModel @ViewModelInject constructor(
     private val getProductByKeyUseCase: GetProductByKeyUseCase,
     private val insertCountProductUseCase : InsertCountProductUseCase,
+    private val insertOrderProductUseCase: InsertOrderProductUseCase,
+    private val insertReceiveProductUseCase: InsertReceiveProductUseCase,
     private val appSettingUseCase: AppSettingUseCase,
     @ApplicationContext private val context: Context
 ) : BaseViewModel<Unit>() {
@@ -62,6 +64,30 @@ class PrepareScanViewModel @ViewModelInject constructor(
     fun insertCount(request: CountRequest) = launchRequest{
         val data = insertCountProductUseCase(
             CountRequest(request.id, request.amount, appSettingUseCase.getHhName())
+        )
+        _dataStates.postValue(DataState.Success(getViewState()))
+        if(!data){
+            _dataStates.value = DataState.Error(Unit, Event(Exception("")))
+        }else{
+            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun insertOrder(request: OrderRequest) = launchRequest{
+        val data = insertOrderProductUseCase(
+            OrderRequest(request.id, request.amount,request.free, appSettingUseCase.getHhName())
+        )
+        _dataStates.postValue(DataState.Success(getViewState()))
+        if(!data){
+            _dataStates.value = DataState.Error(Unit, Event(Exception("")))
+        }else{
+            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun insertReceive(request: ReceiveRequest) = launchRequest{
+        val data = insertReceiveProductUseCase(
+            ReceiveRequest(request.id, request.amount,request.expDate, request.lot, appSettingUseCase.getHhName())
         )
         _dataStates.postValue(DataState.Success(getViewState()))
         if(!data){

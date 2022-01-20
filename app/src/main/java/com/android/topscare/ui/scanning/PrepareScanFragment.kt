@@ -95,6 +95,16 @@ class PrepareScanFragment : BaseFragment() {
                     viewModel.insertCount(it)
                 }
             }
+            observe(_doReceive){ req->
+                req?.let {
+                    viewModel.insertReceive(it)
+                }
+            }
+            observe(_doOrder){ req->
+                req?.let {
+                    viewModel.insertOrder(it)
+                }
+            }
         }
     }
 
