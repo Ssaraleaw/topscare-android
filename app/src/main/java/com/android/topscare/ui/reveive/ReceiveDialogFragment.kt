@@ -1,14 +1,11 @@
 package com.android.topscare.ui.reveive
 
-import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.android.topscare.R
@@ -16,7 +13,6 @@ import com.android.topscare.databinding.FragmentReceiveDialogBinding
 import com.android.topscare.lib_base.base.BaseDialogFragment
 import com.android.topscare.lib_base.extension.observe
 import com.android.topscare.ui.count.CountDialogFragmentArgs
-import java.util.*
 
 class ReceiveDialogFragment : BaseDialogFragment() {
     lateinit var binding: FragmentReceiveDialogBinding

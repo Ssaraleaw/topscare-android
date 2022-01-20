@@ -6,12 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.android.topscare.NavHostViewModel
 import com.android.topscare.R
 import com.android.topscare.databinding.FragmentCountDialogBinding
+import com.android.topscare.domain.model.CountRequest
 import com.android.topscare.lib_base.base.BaseDialogFragment
+import com.android.topscare.lib_base.base.Event
+import com.android.topscare.lib_base.extension.isValidUrl
 import com.android.topscare.lib_base.extension.observe
+import com.android.topscare.lib_base.state.DataState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,6 +25,8 @@ class CountDialogFragment : BaseDialogFragment() {
     lateinit var binding: FragmentCountDialogBinding
     private val viewModel: CountDialogViewModel by viewModels()
     private val args by navArgs<CountDialogFragmentArgs>()
+    private val navHostViewModel: NavHostViewModel by activityViewModels()
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentCountDialogBinding.inflate(LayoutInflater.from(context), null, false)
         val builder = AlertDialog.Builder(requireActivity(), R.style.AlertDialog)
@@ -44,6 +52,26 @@ class CountDialogFragment : BaseDialogFragment() {
         with(viewModel){
             observe(_onClosePressed){
                 navController.popBackStack()
+            }
+            observe(_onSavePressed){
+                viewModel._amountUiState.postValue(validateAmount())
+                if (validateAmount().isError() != true){
+                    viewModel._id.value?.let {
+                        navHostViewModel._doCount.value = CountRequest(it,(viewModel._amount.value?:"0").toInt(),"" )
+                    }
+                    navController.popBackStack()
+                }
+            }
+        }
+    }
+
+    private fun validateAmount() : DataState<Unit> {
+        return when {
+            viewModel._amount.value.isNullOrBlank() || viewModel._amount.value!!.toInt() <= 0 -> {
+                DataState.Error(Unit, Event(Exception(getString(R.string.label_error_data_empty))))
+            }
+            else -> {
+                DataState.Success(Unit)
             }
         }
     }

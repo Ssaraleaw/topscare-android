@@ -33,9 +33,7 @@ class PrepareScanFragment : BaseFragment() {
     private val barcodeLauncher = registerForActivityResult(
         ScanContract()
     ) { result: ScanIntentResult ->
-        if (result.contents == null) {
-            Toast.makeText(requireContext(), "Cancelled", Toast.LENGTH_LONG).show()
-        } else {
+        if (result.contents != null) {
             doVibrate()
             result.contents?.let {
                 viewModel.getProductByKey(key = it)
@@ -87,6 +85,14 @@ class PrepareScanFragment : BaseFragment() {
             observe(dataStates){
                 if(dataStates.value?.isError() == true){
                     navigateToError()
+                }
+            }
+        }
+
+        with(navHostViewModel){
+            observe(_doCount){ req->
+                req?.let {
+                    viewModel.insertCount(it)
                 }
             }
         }
