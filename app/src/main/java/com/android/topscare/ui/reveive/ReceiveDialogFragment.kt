@@ -65,7 +65,7 @@ class ReceiveDialogFragment : BaseDialogFragment() {
                             it,
                             (viewModel._amount.value?:"0").toInt(),
                             viewModel._exp.value?:"",
-                            (viewModel._lot.value?:"0").toInt(),
+                            viewModel._lot.value?:"0",
                             "" )
                     }
                     navController.popBackStack()

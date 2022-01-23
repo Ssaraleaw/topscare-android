@@ -37,6 +37,7 @@
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/fragment_tutorial.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/layout_menu.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/layout_search_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/splash_fragment.xml" value="0.25" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration.xml" value="0.186" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration_error.xml" value="0.151" />

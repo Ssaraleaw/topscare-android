@@ -22,6 +22,7 @@
     <string name="fcname">Generic name: %s</string>
     <string name="fprice">Price:: %s</string>
     <string name="fstore">Store: %s</string>
+    <string name="famount">Amount: %d</string>
     <string name="save">Save</string>
     <string name="label_error_data_empty">Input data is not correct.</string>
     <string name="show_all_history">Show all history</string>

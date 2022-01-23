@@ -13,6 +13,7 @@ class ProductInfoDialogViewModel : BaseViewModel<Unit>() {
     val _price = MutableLiveData<String>()
     val _barcode = MutableLiveData<String>()
     val _store = MutableLiveData<String>()
+    val _amount = MutableLiveData<Int>()
 
     fun onClosePressed(){
         _onClosePressed()
@@ -28,5 +29,6 @@ class ProductInfoDialogViewModel : BaseViewModel<Unit>() {
             _price.value = it.toString().toCurrencyFormatWithoutDecimal()
         }
         _store.value = if(product.stay.isNullOrEmpty()) "N/A" else product.stay
+        _amount.value = product.amount
     }
 }

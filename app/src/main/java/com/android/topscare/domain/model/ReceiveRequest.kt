@@ -8,6 +8,6 @@ data class ReceiveRequest(
     val id: String,
     @SerializedName("value") val amount: Int,
     @SerializedName("expdate")  val expDate: String,
-    val lot: Int,
+    val lot: String,
     val name: String
 )
