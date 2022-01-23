@@ -116,7 +116,7 @@
                     app:title="@{@string/label_exp_date}"
                     app:uiState="@{viewModel._expUiState}" />
 
-                <com.android.topscare.lib_base.customview.TopsCareNumberTextField
+                <com.android.topscare.lib_base.customview.TopsCareTextField
                     android:id="@+id/edt_lot_no"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -124,7 +124,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/size_16"
                     app:hint="@{@string/hint_lot_no}"
-                    app:maxLength="@{6}"
+                    app:maxLength="@{50}"
                     app:text="@={viewModel._lot}"
                     app:title="@{@string/label_lot_no}"
                     app:uiState="@{viewModel._lotUiState}" />

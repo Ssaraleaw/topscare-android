@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import com.android.topscare.NavHostViewModel
 import com.android.topscare.R
 import com.android.topscare.databinding.FragmentEditUrlEnpointDialogBinding
 import com.android.topscare.lib_base.base.BaseDialogFragment
@@ -21,6 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class EditUrlEndpointDialogFragment : BaseDialogFragment() {
     lateinit var binding: FragmentEditUrlEnpointDialogBinding
     private val viewModel: EditUrlEndpointDialogViewModel by viewModels()
+    private val navHostViewModel: NavHostViewModel by activityViewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentEditUrlEnpointDialogBinding.inflate(LayoutInflater.from(context), null, false)
@@ -49,6 +52,7 @@ class EditUrlEndpointDialogFragment : BaseDialogFragment() {
                 viewModel._urlUiState.postValue(validateUrl())
                 if (validateUrl().isError() != true){
                     viewModel.doSaveUrl()
+                    navHostViewModel._onUpdateUrlSuccessEvent()
                     navController.popBackStack()
                 }
             }

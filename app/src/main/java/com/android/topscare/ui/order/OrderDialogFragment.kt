@@ -82,7 +82,7 @@ class OrderDialogFragment : BaseDialogFragment() {
     }
     private fun validateFreeAmount() : DataState<Unit> {
         return when {
-            viewModel._free_amount.value.isNullOrBlank() || viewModel._free_amount.value!!.toInt() <= 0 -> {
+            viewModel._free_amount.value?.isNotBlank() == true && viewModel._free_amount.value!!.toInt() < 0 -> {
                 DataState.Error(Unit, Event(Exception(getString(R.string.label_error_data_empty))))
             }
             else -> {

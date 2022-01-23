@@ -82,6 +82,19 @@ class PrepareScanFragment : BaseFragment() {
                     }
                 }
             }
+            observe(_onHistoryPressed){
+                when(navHostViewModel.scanMode.value){
+                    ScanMode.COUNT ->{
+
+                    }
+                    ScanMode.ORDER ->{
+                        navigateToOrderHistoryPage()
+                    }
+                    ScanMode.RECEIVE ->{
+
+                    }
+                }
+            }
             observe(dataStates){
                 if(dataStates.value?.isError() == true){
                     navigateToError()
@@ -199,6 +212,10 @@ class PrepareScanFragment : BaseFragment() {
         }catch (ex: Exception){
             ex.printStackTrace()
         }
+    }
+
+    private fun navigateToOrderHistoryPage(){
+        navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToOrderHistoryFragment())
     }
 
     override fun onResume() {

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import com.android.topscare.NavHostViewModel
 import com.android.topscare.R
 import com.android.topscare.databinding.FragmentSettingBinding
 import com.android.topscare.lib_base.base.BaseFragment
@@ -17,6 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class SettingFragment : BaseFragment() {
     private val viewModel: SettingViewModel by viewModels()
     private lateinit var binding: FragmentSettingBinding
+    private val navHostViewModel: NavHostViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,6 +50,11 @@ class SettingFragment : BaseFragment() {
             }
             observe(_onUrlEndpointPressed){
                 navigateToEditUrlPage()
+            }
+        }
+        with(navHostViewModel){
+            observe(_onUpdateUrlSuccessEvent){
+                viewModel.reloadUrlEndpoint()
             }
         }
     }

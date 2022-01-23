@@ -86,7 +86,7 @@ class ReceiveDialogFragment : BaseDialogFragment() {
     }
     private fun validateLotNo() : DataState<Unit> {
         return when {
-            viewModel._lot.value.isNullOrBlank() || viewModel._lot.value!!.toInt() <= 0 -> {
+            viewModel._lot.value.isNullOrBlank() -> {
                 DataState.Error(Unit, Event(Exception(getString(R.string.label_error_data_empty))))
             }
             else -> {

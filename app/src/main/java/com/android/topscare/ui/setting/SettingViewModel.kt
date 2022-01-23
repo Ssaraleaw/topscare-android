@@ -36,4 +36,7 @@ class SettingViewModel @ViewModelInject constructor(
     fun onBackPressed(){
         _onBackPressed()
     }
+    fun reloadUrlEndpoint(){
+        _urlEndpoint.postValue(appSettingUseCase.getBaseUrl())
+    }
 }

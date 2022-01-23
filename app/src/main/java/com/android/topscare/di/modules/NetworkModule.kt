@@ -83,8 +83,7 @@ class NetworkModule {
         appSettingUseCase: AppSettingUseCase
     ): Retrofit = Retrofit.Builder()
         .addConverterFactory(gson)
-//        .baseUrl(appSettingUseCase.getBaseUrl())
-        .baseUrl("http://192.168.1.36")
+        .baseUrl(appSettingUseCase.getBaseUrl())
         .client(okHttpClient)
         .build()
 }

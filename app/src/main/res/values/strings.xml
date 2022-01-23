@@ -35,4 +35,5 @@
     <string name="hint_lot_no">Please enter Lot no.</string>
     <string name="hint_exp_date">2022-01-24</string>
     <string name="label_exp_date">Expire date</string>
+    <string name="order_history">Order History</string>
 </resources>
