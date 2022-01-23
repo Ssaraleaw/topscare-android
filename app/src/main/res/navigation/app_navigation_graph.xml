@@ -85,8 +85,8 @@
             android:id="@+id/action_prepareScanFragment_to_receiveDialogFragment"
             app:destination="@id/receiveDialogFragment" />
         <action
-            android:id="@+id/action_prepareScanFragment_to_orderHistoryFragment"
-            app:destination="@id/orderHistoryFragment"
+            android:id="@+id/action_prepareScanFragment_to_countHistoryFragment"
+            app:destination="@id/countHistoryFragment"
             app:enterAnim="@anim/slide_in_from_right"
             app:exitAnim="@anim/slide_out_from_left"
             app:popEnterAnim="@anim/slide_in_from_left"
@@ -125,8 +125,8 @@
             android:name="product"/>
     </dialog>
     <fragment
-        android:id="@+id/orderHistoryFragment"
-        android:name="com.android.topscare.ui.history.OrderHistoryFragment"
+        android:id="@+id/countHistoryFragment"
+        android:name="com.android.topscare.ui.history.CountHistoryFragment"
         android:label="OrderHistoryFragment"
-        tools:layout="@layout/fragment_order_history"/>
+        tools:layout="@layout/fragment_count_history"/>
 </navigation>

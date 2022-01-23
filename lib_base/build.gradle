@@ -49,15 +49,15 @@ dependencies {
     api "com.google.dagger:dagger-android-support:${versions.dagger}"
     api "com.google.dagger:hilt-android:${versions.hilt}"
     api "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hilt_compiler}"
-
+    implementation "androidx.paging:paging-runtime-ktx:${versions.paging_version}"
     kapt "com.google.dagger:hilt-android-compiler:${versions.hilt}"
     kapt "androidx.hilt:hilt-compiler:${versions.hilt_compiler}"
-
+    api "androidx.paging:paging-runtime-ktx:${versions.paging_version}"
     api "com.google.code.gson:gson:${versions.gson}"
     api "com.squareup.okhttp3:logging-interceptor:${versions.interceptor}"
     api "com.squareup.retrofit2:converter-gson:2.6.2"
     api "com.squareup.retrofit2:retrofit:2.7.1"
-
+    api "androidx.recyclerview:recyclerview:${versions.recyclerview}"
     api 'io.sentry:sentry-android:5.1.2'
     api 'androidx.security:security-crypto:1.1.0-alpha03'
     testImplementation 'junit:junit:4.13.2'

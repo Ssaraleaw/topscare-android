@@ -1,9 +1,6 @@
 package com.android.topscare.domain.data.remote
 
-import com.android.topscare.domain.model.CountRequest
-import com.android.topscare.domain.model.OrderRequest
-import com.android.topscare.domain.model.ProductResponse
-import com.android.topscare.domain.model.ReceiveRequest
+import com.android.topscare.domain.model.*
 import com.android.topscare.lib_base.network.NetworkResponseWrapper
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -22,4 +19,10 @@ interface Api {
 
     @POST("topscare/index.php/product/receive")
     suspend fun insertReceiveProduct(@Body receiveRequest : ReceiveRequest): NetworkResponseWrapper<Any>
+
+    @GET("topscare/index.php/product/listCount")
+    suspend fun searchProductCount(@Query("limit") limit : Int,
+                                   @Query("page") page : Int,
+                                   @Query("key") key : String?
+    ): NetworkResponseWrapper<List<CountResponse>?>
 }

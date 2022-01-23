@@ -37,5 +37,6 @@
     <string name="hint_lot_no">กรุณาระบุเลข Lot</string>
     <string name="hint_exp_date">2022-01-24</string>
     <string name="label_exp_date">วันหมดอายุ</string>
-    <string name="order_history">Order History</string>
+    <string name="order_history">ประวัติการสั่งซื้อ</string>
+    <string name="count_history">ประวัติการระบุจำนวน</string>
 </resources>

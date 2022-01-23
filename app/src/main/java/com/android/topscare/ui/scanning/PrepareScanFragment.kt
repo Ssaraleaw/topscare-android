@@ -85,7 +85,7 @@ class PrepareScanFragment : BaseFragment() {
             observe(_onHistoryPressed){
                 when(navHostViewModel.scanMode.value){
                     ScanMode.COUNT ->{
-
+                        navigateToCountHistoryPage()
                     }
                     ScanMode.ORDER ->{
                         navigateToOrderHistoryPage()
@@ -215,7 +215,10 @@ class PrepareScanFragment : BaseFragment() {
     }
 
     private fun navigateToOrderHistoryPage(){
-        navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToOrderHistoryFragment())
+
+    }
+    private fun navigateToCountHistoryPage(){
+        navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToCountHistoryFragment())
     }
 
     override fun onResume() {

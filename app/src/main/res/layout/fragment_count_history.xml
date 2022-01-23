@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.android.topscare.ui.history.OrderHistoryViewModel" />
+            type="com.android.topscare.ui.history.CountHistoryViewModel" />
+        <variable
+            name="adapter"
+            type="com.android.topscare.ui.history.PagedCountHistoryListAdapter" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,11 +72,11 @@
             android:layout_marginTop="@dimen/size_16"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:maxLines="1"
-            android:text="@string/order_history"
+            android:text="@string/count_history"
             android:textColor="@color/gray_700"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/btn_back"
-            tools:text="Order History" />
+            tool:text="Count History" />
 
         <com.android.topscare.lib_base.customview.TopsCareTextField
             android:id="@+id/edt_search"
@@ -87,13 +92,21 @@
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/label_title_page"
             />
-        <androidx.viewpager2.widget.ViewPager2
-            android:layout_height="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/size_16"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/edt_search"
-            />
+            tool:listitem="@layout/viewholder_count_item" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

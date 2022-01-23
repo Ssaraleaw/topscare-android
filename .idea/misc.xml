@@ -38,10 +38,14 @@
         <entry key="app/src/main/res/layout/fragment_tutorial.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/layout_menu.xml" value="0.335" />
         <entry key="app/src/main/res/layout/layout_search_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/progress_loading.xml" value="0.2" />
         <entry key="app/src/main/res/layout/splash_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/viewholder_count_item.xml" value="0.22826086956521738" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration.xml" value="0.186" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration_error.xml" value="0.151" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_disable.xml" value="0.151" />
+        <entry key="lib_base/src/main/res/drawable/veritical_item_divider_grey_100.xml" value="0.1925" />
+        <entry key="lib_base/src/main/res/drawable/veritical_item_divider_grey_200.xml" value="0.1925" />
         <entry key="lib_base/src/main/res/layout/layout_tops_care_number_text_field.xml" value="0.1933876811594203" />
         <entry key="lib_base/src/main/res/layout/layout_tops_care_select_view.xml" value="0.18115942028985507" />
         <entry key="lib_base/src/main/res/layout/layout_tops_care_text_field.xml" value="0.1734375" />
