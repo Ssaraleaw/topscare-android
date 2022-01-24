@@ -83,6 +83,7 @@
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="0dp"
+            android:layout_marginTop="@dimen/size_16"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_input_field_decoration"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
@@ -93,6 +94,7 @@
             android:id="@+id/swipeRefreshLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/size_16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
@@ -102,7 +104,6 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/size_16"
                 android:clipToPadding="false"
                 android:orientation="vertical"
                 android:overScrollMode="never"
