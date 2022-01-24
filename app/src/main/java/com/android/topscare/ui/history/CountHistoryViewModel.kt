@@ -29,7 +29,7 @@ class CountHistoryViewModel @ViewModelInject constructor(
     fun onSearchPressed(){
         _onSearchPressed()
     }
-    private fun getCountHistory(){
-        pagedListResult.value = getProductCountUseCase(viewModelScope,"", page = 0)
+    fun getCountHistory(){
+        pagedListResult.value = getProductCountUseCase(viewModelScope,_search.value?:"", page = 0)
     }
 }
