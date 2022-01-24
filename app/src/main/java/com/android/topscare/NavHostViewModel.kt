@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import com.android.topscare.domain.data.ScanMode
 import com.android.topscare.domain.model.CountRequest
+import com.android.topscare.domain.model.CountResponse
 import com.android.topscare.domain.model.OrderRequest
 import com.android.topscare.domain.model.ReceiveRequest
 import com.android.topscare.lib_base.base.BaseViewModel
@@ -17,6 +18,7 @@ class NavHostViewModel @ViewModelInject constructor(
     val _doOrder = SingleLiveEvent<OrderRequest>()
     val _doReceive = SingleLiveEvent<ReceiveRequest>()
     val _onUpdateUrlSuccessEvent = SingleLiveEvent<Any>()
+    val _onConfirmDeleteCountItemEvent = SingleLiveEvent<CountResponse>()
     init {
         scanMode.value = ScanMode.CHECK
     }

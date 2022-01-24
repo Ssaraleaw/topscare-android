@@ -25,4 +25,7 @@ interface Api {
                                    @Query("page") page : Int,
                                    @Query("key") key : String?
     ): NetworkResponseWrapper<List<CountResponse>?>
+
+    @POST("topscare/index.php/product/deleteCount")
+    suspend fun deleteCountProduct(@Body deleteCountRequest : DeleteCountRequest): NetworkResponseWrapper<Any>
 }

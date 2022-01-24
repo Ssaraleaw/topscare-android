@@ -39,4 +39,8 @@
     <string name="label_exp_date">วันหมดอายุ</string>
     <string name="order_history">ประวัติการสั่งซื้อ</string>
     <string name="count_history">ประวัติการระบุจำนวน</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="confirm">ใช่ ลบเดียวนี้</string>
+    <string name="title_delete">ยืนยันการลบข้อมูล</string>
+    <string name="desc_delete">คุณต้องการลบข้อมูล %s จำนวน: %d ใช่หรือไม่?</string>
 </resources>

@@ -22,7 +22,7 @@
     <string name="fcname">Generic name: %s</string>
     <string name="fprice">Price:: %s</string>
     <string name="fstore">Store: %s</string>
-    <string name="famount">Amount: %d</string>
+    <string name="famount">Remaining Amount: %d</string>
     <string name="save">Save</string>
     <string name="label_error_data_empty">Input data is not correct.</string>
     <string name="show_all_history">Show all history</string>
@@ -38,4 +38,8 @@
     <string name="label_exp_date">Expire date</string>
     <string name="order_history">Order History</string>
     <string name="count_history">Count History</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Yes, Delete now!</string>
+    <string name="title_delete">Confirm to delete.</string>
+    <string name="desc_delete">Do you want to delete %s amount: %d?</string>
 </resources>

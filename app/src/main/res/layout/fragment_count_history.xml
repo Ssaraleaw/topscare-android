@@ -8,11 +8,13 @@
 
         <variable
             name="viewModel"
-            type="com.android.topscare.ui.history.CountHistoryViewModel" />
+            type="com.android.topscare.ui.history.count.CountHistoryViewModel" />
         <variable
             name="adapter"
-            type="com.android.topscare.ui.history.PagedCountHistoryListAdapter" />
-
+            type="com.android.topscare.ui.history.count.PagedCountHistoryListAdapter" />
+        <variable
+            name="layoutManager"
+            type="androidx.recyclerview.widget.LinearLayoutManager" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,22 +89,42 @@
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/label_title_page"
             />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/size_16"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:overScrollMode="never"
-            app:adapter="@{adapter}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/search_view"
-            tool:listitem="@layout/viewholder_count_item" />
+            app:layout_constraintTop_toBottomOf="@id/search_view">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_16"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:adapter="@{adapter}"
+                app:layoutManager="@{layoutManager}"
+                tool:listitem="@layout/viewholder_count_item" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_700"
+            android:alpha="0.6"
+            app:isVisible="@{viewModel.dataStates.isLoading()}"
+            />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:animatedVisibility="@{viewModel.dataStates.isLoading()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

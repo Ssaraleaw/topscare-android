@@ -126,7 +126,28 @@
     </dialog>
     <fragment
         android:id="@+id/countHistoryFragment"
-        android:name="com.android.topscare.ui.history.CountHistoryFragment"
+        android:name="com.android.topscare.ui.history.count.CountHistoryFragment"
         android:label="OrderHistoryFragment"
-        tools:layout="@layout/fragment_count_history"/>
+        tools:layout="@layout/fragment_count_history">
+        <action
+            android:id="@+id/action_countHistoryFragment_to_productInfoDialogFragment"
+            app:destination="@id/productInfoDialogFragment" />
+        <action
+            android:id="@+id/action_countHistoryFragment_to_confirmDeleteDialogFragment"
+            app:destination="@id/confirmDeleteDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/confirmDeleteDialogFragment"
+        android:name="com.android.topscare.ui.history.count.dialog.ConfirmDeleteDialogFragment"
+        android:label="ConfirmDeleteDialogFragment"
+        tools:layout="@layout/fragment_confirm_dialog">
+        <argument android:name="countResponse"
+            app:argType="com.android.topscare.domain.model.CountResponse"/>
+        <argument
+            app:argType="string"
+            android:name="title"/>
+        <argument
+            app:argType="string"
+            android:name="desc"/>
+    </dialog>
 </navigation>

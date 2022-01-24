@@ -18,6 +18,9 @@ class TopsCareRepository @Inject constructor(
     suspend fun insertCountProduct(request: CountRequest): NetworkResponseWrapper<Any>{
         return doRequest { api.addCountProduct(request) }
     }
+    suspend fun deleteCountProduct(request: DeleteCountRequest): NetworkResponseWrapper<Any>{
+        return doRequest { api.deleteCountProduct(request) }
+    }
     suspend fun insertOrderProduct(request: OrderRequest): NetworkResponseWrapper<Any>{
         return doRequest { api.insertOrderProduct(request) }
     }

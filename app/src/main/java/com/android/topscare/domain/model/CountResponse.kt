@@ -14,6 +14,7 @@ data class CountResponse(
     @SerializedName("value_check") val amount: Int,
     @SerializedName("HH_name") val hhName: String,
     @SerializedName("product_bname") val name: String,
+    @SerializedName("product_barcode") val barcode: String,
     @SerializedName("create_date") val date: String
 ) : Parcelable {
     companion object {
