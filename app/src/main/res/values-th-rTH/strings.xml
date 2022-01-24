@@ -24,6 +24,7 @@
     <string name="fprice">ราคาขาย: %s</string>
     <string name="fstore">สถานที่เก็บ: %s</string>
     <string name="famount">จำนวนคงเหลือ: %d</string>
+    <string name="ffree">จำนวนแถม: %s</string>
     <string name="save">บันทึก</string>
     <string name="label_error_data_empty">กรุณาระบุข้อมูลให้ถูกต้อง</string>
     <string name="show_all_history">แสดงประวัติทำรายการ</string>
