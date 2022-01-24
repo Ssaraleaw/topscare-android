@@ -27,5 +27,14 @@ interface Api {
     ): NetworkResponseWrapper<List<CountResponse>?>
 
     @POST("topscare/index.php/product/deleteCount")
-    suspend fun deleteCountProduct(@Body deleteCountRequest : DeleteCountRequest): NetworkResponseWrapper<Any>
+    suspend fun deleteCountProduct(@Body deleteRequest : DeleteRequest): NetworkResponseWrapper<Any>
+
+    @GET("topscare/index.php/product/listOrder")
+    suspend fun searchProductOrder(@Query("limit") limit : Int,
+                                   @Query("page") page : Int,
+                                   @Query("key") key : String?
+    ): NetworkResponseWrapper<List<OrderHistoryResponse>?>
+
+    @POST("topscare/index.php/product/deleteOrder")
+    suspend fun deleteOrderProduct(@Body deleteRequest : DeleteRequest): NetworkResponseWrapper<Any>
 }

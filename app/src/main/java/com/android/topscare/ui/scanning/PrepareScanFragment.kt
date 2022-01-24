@@ -215,7 +215,7 @@ class PrepareScanFragment : BaseFragment() {
     }
 
     private fun navigateToOrderHistoryPage(){
-
+        navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToOrderHistoryFragment())
     }
     private fun navigateToCountHistoryPage(){
         navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToCountHistoryFragment())

@@ -2,19 +2,21 @@ package com.android.topscare.domain.usecase
 
 import androidx.paging.LivePagedListBuilder
 import com.android.topscare.domain.data.datasource.ProductCountDataSourceFactory
+import com.android.topscare.domain.data.datasource.ProductOrderDataSourceFactory
 import com.android.topscare.domain.data.repository.TopsCareRepository
 import com.android.topscare.domain.model.CountResponse
+import com.android.topscare.domain.model.OrderHistoryResponse
 import com.android.topscare.domain.model.ProductHistoryRequest
 import com.android.topscare.lib_base.utils.PagedListResult
 import kotlinx.coroutines.CoroutineScope
 import java.util.concurrent.Executors
 import javax.inject.Inject
 
-class GetProductCountUseCase @Inject constructor(
+class GetProductOrderHistoryUseCase @Inject constructor(
     private val repository: TopsCareRepository
 ){
-    operator fun invoke(coroutineScope: CoroutineScope,key: String, page: Int) : PagedListResult<CountResponse> {
-        val dataSourceFactory = ProductCountDataSourceFactory(
+    operator fun invoke(coroutineScope: CoroutineScope,key: String, page: Int) : PagedListResult<OrderHistoryResponse> {
+        val dataSourceFactory = ProductOrderDataSourceFactory(
             historyRequest = ProductHistoryRequest(key,page,LIMIT),
             repository = repository,
             coroutineScope = coroutineScope,

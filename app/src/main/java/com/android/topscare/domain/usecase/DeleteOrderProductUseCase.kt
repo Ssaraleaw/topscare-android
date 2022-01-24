@@ -4,10 +4,10 @@ import com.android.topscare.domain.data.repository.TopsCareRepository
 import com.android.topscare.domain.model.DeleteRequest
 import javax.inject.Inject
 
-class DeleteCountProductUseCase @Inject constructor(
+class DeleteOrderProductUseCase @Inject constructor(
     private val repository: TopsCareRepository
 ){
     suspend operator fun invoke(deleteRequest: DeleteRequest) : Boolean {
-        return repository.deleteCountProduct(deleteRequest)?.resultCode == 200
+        return repository.deleteOrderProduct(deleteRequest)?.resultCode == 200
     }
 }
