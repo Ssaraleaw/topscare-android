@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/fragment_about_dialog.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_confirm_delete_order_dialog.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/fragment_confirm_delete_receive_dialog.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/fragment_confirm_dialog.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/fragment_count_dialog.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_count_history.xml" value="0.22826086956521738" />
@@ -39,6 +40,7 @@
         <entry key="app/src/main/res/layout/fragment_prepare_scan.xml" value="0.22991071428571427" />
         <entry key="app/src/main/res/layout/fragment_product_info_dialog.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_receive_dialog.xml" value="0.18115942028985507" />
+        <entry key="app/src/main/res/layout/fragment_receive_history.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/fragment_tutorial.xml" value="0.1933876811594203" />
@@ -48,6 +50,7 @@
         <entry key="app/src/main/res/layout/splash_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/viewholder_count_item.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/viewholder_order_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/viewholder_receive_item.xml" value="0.335" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1225" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration.xml" value="0.186" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration_error.xml" value="0.151" />

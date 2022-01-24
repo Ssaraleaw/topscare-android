@@ -37,6 +37,18 @@ fun String.isDateFormat(dateFormat: String) : Boolean{
         false
     }
 }
+fun String.toDateFormat() : String{
+    var data = ""
+    try {
+        var formatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val date = formatter.parse(this)
+        val format = SimpleDateFormat("dd/MM/yyy")
+        data = format.format(date)
+    }catch (ex: Exception){
+        ex.printStackTrace()
+    }
+    return data
+}
 
 @Throws(ParseException::class)
 fun doFormatDate(dateStr: String, formatSrt : String) {

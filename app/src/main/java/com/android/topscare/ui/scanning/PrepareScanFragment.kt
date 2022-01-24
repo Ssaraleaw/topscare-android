@@ -91,7 +91,7 @@ class PrepareScanFragment : BaseFragment() {
                         navigateToOrderHistoryPage()
                     }
                     ScanMode.RECEIVE ->{
-
+                        navigateToReceiveHistoryPage()
                     }
                 }
             }
@@ -219,6 +219,9 @@ class PrepareScanFragment : BaseFragment() {
     }
     private fun navigateToCountHistoryPage(){
         navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToCountHistoryFragment())
+    }
+    private fun navigateToReceiveHistoryPage(){
+        navController.navigate(PrepareScanFragmentDirections.actionPrepareScanFragmentToReceiveHistoryFragment())
     }
 
     override fun onResume() {

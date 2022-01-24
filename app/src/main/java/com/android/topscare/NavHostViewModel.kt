@@ -17,6 +17,7 @@ class NavHostViewModel @ViewModelInject constructor(
     val _onUpdateUrlSuccessEvent = SingleLiveEvent<Any>()
     val _onConfirmDeleteCountItemEvent = SingleLiveEvent<CountResponse>()
     val _onConfirmDeleteOrderItemEvent = SingleLiveEvent<OrderHistoryResponse>()
+    val _onConfirmDeleteReceiveItemEvent = SingleLiveEvent<ReceiveHistoryResponse>()
     init {
         scanMode.value = ScanMode.CHECK
     }

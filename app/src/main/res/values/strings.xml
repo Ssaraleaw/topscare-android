@@ -24,6 +24,8 @@
     <string name="fstore">Store: %s</string>
     <string name="famount">Remaining Amount: %d</string>
     <string name="ffree">Free Amount: %s</string>
+    <string name="flotno">Lot No.: %s</string>
+    <string name="fexpdate">Exp Date: %s</string>
     <string name="save">Save</string>
     <string name="label_error_data_empty">Input data is not correct.</string>
     <string name="show_all_history">Show all history</string>
@@ -43,4 +45,5 @@
     <string name="confirm">Yes, Delete now!</string>
     <string name="title_delete">Confirm to delete.</string>
     <string name="desc_delete">Do you want to delete %s amount: %d?</string>
+    <string name="receive_history">Receive History</string>
 </resources>

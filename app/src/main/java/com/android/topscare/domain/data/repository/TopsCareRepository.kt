@@ -18,6 +18,10 @@ class TopsCareRepository @Inject constructor(
     suspend fun getProductOrder(limit: Int, page: Int, key: String?): List<OrderHistoryResponse>?{
         return doRequest { api.searchProductOrder(limit, page, key).data }
     }
+    suspend fun getProductReceive(limit: Int, page: Int, key: String?): List<ReceiveHistoryResponse>?{
+        return doRequest { api.searchProductReceive(limit, page, key).data }
+    }
+
     suspend fun insertCountProduct(request: CountRequest): NetworkResponseWrapper<Any>{
         return doRequest { api.addCountProduct(request) }
     }
@@ -26,6 +30,9 @@ class TopsCareRepository @Inject constructor(
     }
     suspend fun deleteOrderProduct(request: DeleteRequest): NetworkResponseWrapper<Any>{
         return doRequest { api.deleteOrderProduct(request) }
+    }
+    suspend fun deleteReceiveProduct(request: DeleteRequest): NetworkResponseWrapper<Any>{
+        return doRequest { api.deleteReceiveProduct(request) }
     }
     suspend fun insertOrderProduct(request: OrderRequest): NetworkResponseWrapper<Any>{
         return doRequest { api.insertOrderProduct(request) }

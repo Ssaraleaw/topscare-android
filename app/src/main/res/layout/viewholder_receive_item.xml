@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="receiveHistoryResponse"
+            type="com.android.topscare.domain.model.ReceiveHistoryResponse"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/label_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.Headline7"
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/size_8"
+                android:paddingBottom="@dimen/size_8"
+                android:layout_marginRight="@dimen/size_16"
+                android:maxLines="1"
+                android:text="@{receiveHistoryResponse.name}"
+                android:textAlignment="textStart"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/label_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Paracetamol 500 mg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_free"
+                style="@style/TextAppearance.BodyTiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{@string/flotno(receiveHistoryResponse.lotNo)}"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray_600"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete"
+                app:layout_constraintTop_toBottomOf="@id/label_amount"
+                tools:text="lot: 50" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_exp"
+                style="@style/TextAppearance.BodyTiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray_600"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete"
+                app:layout_constraintTop_toBottomOf="@id/label_amount"
+                tools:text="Exp Date:2020/01/02" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_date"
+                style="@style/TextAppearance.BodyTiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/size_16"
+                android:maxLines="1"
+                android:paddingTop="@dimen/size_8"
+                android:paddingBottom="@dimen/size_8"
+                android:text="@{receiveHistoryResponse.date}"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray_500"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/label_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_name"
+                tools:text="04 Jan 2022 12:00" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_amount"
+            style="@style/TextAppearance.Headline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:maxLines="1"
+            android:layout_marginRight="@dimen/size_16"
+            android:layout_marginLeft="@dimen/size_16"
+            android:text="@{Integer.toString(receiveHistoryResponse.amount)}"
+            android:textAlignment="textStart"
+            android:textColor="@color/gray_700"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="500" />
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="@dimen/size_16"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

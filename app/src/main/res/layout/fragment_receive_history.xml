@@ -8,10 +8,10 @@
 
         <variable
             name="viewModel"
-            type="com.android.topscare.ui.history.order.OrderHistoryViewModel" />
+            type="com.android.topscare.ui.history.receive.ReceiveHistoryViewModel" />
         <variable
             name="adapter"
-            type="com.android.topscare.ui.history.order.PagedOrderHistoryListAdapter" />
+            type="com.android.topscare.ui.history.receive.PagedReceiveHistoryListAdapter" />
         <variable
             name="layoutManager"
             type="androidx.recyclerview.widget.LinearLayoutManager" />
@@ -74,11 +74,11 @@
             android:layout_marginTop="@dimen/size_16"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:maxLines="1"
-            android:text="@string/order_history"
+            android:text="@string/receive_history"
             android:textColor="@color/gray_700"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/btn_back"
-            tool:text="Order History" />
+            tool:text="Receive History" />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
@@ -109,7 +109,7 @@
                 android:overScrollMode="never"
                 app:adapter="@{adapter}"
                 app:layoutManager="@{layoutManager}"
-                tool:listitem="@layout/viewholder_order_item" />
+                tool:listitem="@layout/viewholder_receive_item" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         <View
             android:layout_width="match_parent"

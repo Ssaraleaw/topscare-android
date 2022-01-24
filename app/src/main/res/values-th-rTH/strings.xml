@@ -25,6 +25,8 @@
     <string name="fstore">สถานที่เก็บ: %s</string>
     <string name="famount">จำนวนคงเหลือ: %d</string>
     <string name="ffree">จำนวนแถม: %s</string>
+    <string name="fexpdate">วันหมดอายุ: %s</string>
+    <string name="flotno">เลข Lot: %s</string>
     <string name="save">บันทึก</string>
     <string name="label_error_data_empty">กรุณาระบุข้อมูลให้ถูกต้อง</string>
     <string name="show_all_history">แสดงประวัติทำรายการ</string>
@@ -34,7 +36,7 @@
     <string name="hint_free_amount">กรุณาระบุจำนวนแถม</string>
     <string name="free_amount">จำนวนแถม</string>
     <string name="confirm_to_add_product">ยืนยันได้รับสินค้า</string>
-    <string name="label_lot_no">Lot no.</string>
+    <string name="label_lot_no">เลข Lot</string>
     <string name="hint_lot_no">กรุณาระบุเลข Lot</string>
     <string name="hint_exp_date">2022-01-24</string>
     <string name="label_exp_date">วันหมดอายุ</string>
@@ -44,4 +46,5 @@
     <string name="confirm">ใช่ ลบเดียวนี้</string>
     <string name="title_delete">ยืนยันการลบข้อมูล</string>
     <string name="desc_delete">คุณต้องการลบข้อมูล %s จำนวน: %d ใช่หรือไม่?</string>
+    <string name="receive_history">Receive History</string>
 </resources>
