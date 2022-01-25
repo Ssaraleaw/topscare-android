@@ -46,6 +46,7 @@
     <string name="title_delete">Confirm to delete.</string>
     <string name="desc_delete">Do you want to delete %s amount: %d?</string>
     <string name="receive_history">Receive History</string>
-    <string name="desc_getting_started">Desc Getting Started</string>
+    <string name="desc_getting_started"><![CDATA[1. Please make sure the API and database are completely installed.<br>2. go to \'http://{your ip server}/topscare/setup.php\'<br>3. Click Scan Now for using.]]>
+</string>
     <string name="scan_now">Scan Now!</string>
 </resources>

@@ -83,10 +83,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center_vertical"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:maxLines="1"
-                    android:text="@string/desc_getting_started"
                     android:textColor="@color/gray_700"
-                    tools:text="Getting Stared" />
+                    tools:text="@string/desc_getting_started" />
             </LinearLayout>
         </ScrollView>
         <com.google.android.material.button.MaterialButton

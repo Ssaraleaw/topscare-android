@@ -5,12 +5,15 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Vibrator
+import android.text.Html
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import com.android.topscare.NavHostActivity
+import com.android.topscare.R
 import com.android.topscare.databinding.ActivityGettingStartedBinding
 import com.android.topscare.lib_base.extension.observe
 import com.android.topscare.lib_base.extension.toUri
@@ -45,6 +48,7 @@ class GettingStartedActivity : AppCompatActivity() {
         if(!viewModel.isFistTimeUsage()){
             navigateToMainMenu()
         }
+        binding.descGettingStart.text = HtmlCompat.fromHtml(getString(R.string.desc_getting_started), HtmlCompat.FROM_HTML_MODE_COMPACT)
         registerObserver()
     }
 
