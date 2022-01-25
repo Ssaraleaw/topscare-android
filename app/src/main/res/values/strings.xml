@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">topscare-android</string>
+    <string name="app_name">TopsCare-Android</string>
     <string name="label_powered_by">Powered by WorldMedic</string>
     <string name="label_main_menu">Main Menu</string>
     <string name="check">Check</string>
