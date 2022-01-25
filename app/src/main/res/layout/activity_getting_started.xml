@@ -44,7 +44,7 @@
             android:layout_marginTop="@dimen/size_16"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:maxLines="1"
-            android:text="@string/setting"
+            android:text="@string/getting_stared"
             android:textColor="@color/gray_700"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/top_guideline"
