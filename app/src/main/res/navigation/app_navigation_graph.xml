@@ -216,4 +216,13 @@
             app:argType="string"
             android:name="desc"/>
     </dialog>
+    <activity
+        android:id="@+id/gettingStartedActivity"
+        android:name="com.android.topscare.ui.getting_started.GettingStartedActivity"
+        android:label="GettingStartedActivity" >
+        <deepLink
+            android:id="@+id/gettingStaredDeepLink"
+            app:uri="topscare://getting"/>
+    </activity>
+
 </navigation>

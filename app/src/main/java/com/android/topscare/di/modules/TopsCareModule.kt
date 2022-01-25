@@ -1,6 +1,7 @@
 package com.android.topscare.di.modules
 
 import com.android.topscare.domain.data.remote.Api
+import com.android.topscare.lib_base.di.module.BaseRetrofit
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,6 +14,6 @@ import javax.inject.Named
 @InstallIn(ActivityComponent::class)
 object TopsCareModule {
     @Provides
-    fun provideApi(@Named("BaseRetrofit") retrofit: Retrofit): Api =
+    fun provideApi(@BaseRetrofit retrofit: Retrofit): Api =
         retrofit.create()
 }

@@ -46,4 +46,7 @@ interface Api {
 
     @POST("topscare/index.php/product/deleteReceive")
     suspend fun deleteReceiveProduct(@Body deleteRequest : DeleteRequest): NetworkResponseWrapper<Any>
+
+    @POST("/topscare/setup/index.php/setting/check")
+    suspend fun checkIp(@Body checkIpRequest : CheckIpRequest): NetworkResponseWrapper<Any>
 }

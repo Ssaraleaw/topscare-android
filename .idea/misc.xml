@@ -33,7 +33,7 @@
         <entry key="app/src/main/res/layout/fragment_count_history.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/fragment_edit_url_enpoint_dialog.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/fragment_error_dialog.xml" value="0.18125" />
-        <entry key="app/src/main/res/layout/fragment_getting_started.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/fragment_getting_started.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_main_menu.xml" value="0.3576271186440678" />
         <entry key="app/src/main/res/layout/fragment_order_dialog.xml" value="0.23007246376811594" />
         <entry key="app/src/main/res/layout/fragment_order_history.xml" value="0.165" />

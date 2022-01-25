@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.android.topscare.BuildConfig
 import com.android.topscare.domain.usecase.AppSettingUseCase
+import com.android.topscare.lib_base.di.module.BaseOkHttpClient
+import com.android.topscare.lib_base.di.module.BaseRetrofit
 import com.android.topscare.lib_base.utils.HttpLogger
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
@@ -53,7 +55,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    @Named("BaseOkHttpClient")
+    @BaseOkHttpClient
     fun provideOkHttpClient(
         logging: HttpLoggingInterceptor,
         cache: Cache,
@@ -76,10 +78,10 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    @Named("BaseRetrofit")
+    @BaseRetrofit
     fun provideRetrofit(
         gson: GsonConverterFactory,
-        @Named("BaseOkHttpClient") okHttpClient: OkHttpClient,
+        @BaseOkHttpClient okHttpClient: OkHttpClient,
         appSettingUseCase: AppSettingUseCase
     ): Retrofit = Retrofit.Builder()
         .addConverterFactory(gson)

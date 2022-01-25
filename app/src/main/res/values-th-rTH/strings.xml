@@ -47,4 +47,6 @@
     <string name="title_delete">ยืนยันการลบข้อมูล</string>
     <string name="desc_delete">คุณต้องการลบข้อมูล %s จำนวน: %d ใช่หรือไม่?</string>
     <string name="receive_history">Receive History</string>
+    <string name="desc_getting_started">Desc Getting Started</string>
+    <string name="scan_now">Scan Now!</string>
 </resources>
