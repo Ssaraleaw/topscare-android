@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.android.topscare.NavHostViewModel
@@ -36,6 +37,8 @@ class PrepareScanFragment : BaseFragment() {
         if (result.contents != null) {
             doVibrate()
             result.contents?.let {
+                binding.searchView.setQuery(it, false)
+                binding.searchView.clearFocus()
                 viewModel.getProductByKey(key = it)
             }
         }
@@ -57,6 +60,23 @@ class PrepareScanFragment : BaseFragment() {
         val intentFilter = IntentFilter(ACTION_BARCODE_DATA)
         requireContext().registerReceiver(barcodeDataReceiver, intentFilter)
         registerObserver()
+        binding.searchView.isActivated = true
+        binding.searchView.queryHint = "Search"
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    viewModel.getProductByKey(key = it)
+                }
+                hideKeyboard()
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+        binding.searchView.onActionViewExpanded()
+        binding.searchView.isIconified = false
+        binding.searchView.clearFocus()
     }
     private fun registerObserver() {
         with(viewModel) {
@@ -275,6 +295,8 @@ class PrepareScanFragment : BaseFragment() {
                         data, charset, dataBytesStr, aimId, codeId, timestamp
                     )
                     data?.let {
+                        binding.searchView.setQuery(it, false)
+                        binding.searchView.clearFocus()
                         viewModel.getProductByKey(key = it)
                     }
                 }

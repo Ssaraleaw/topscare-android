@@ -49,31 +49,31 @@ class TopsCareRepository @Inject constructor(
         return doRequest { api.searchProductReceive(limit, page, key).data }
     }
 
-    suspend fun insertCountProduct(request: CountRequest): NetworkResponseWrapper<Any>{
+    suspend fun insertCountProduct(request: CountRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.addCountProduct(request) }
     }
-    suspend fun deleteCountProduct(request: DeleteRequest): NetworkResponseWrapper<Any>{
+    suspend fun deleteCountProduct(request: DeleteRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.deleteCountProduct(request) }
     }
-    suspend fun deleteOrderProduct(request: DeleteRequest): NetworkResponseWrapper<Any>{
+    suspend fun deleteOrderProduct(request: DeleteRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.deleteOrderProduct(request) }
     }
-    suspend fun deleteReceiveProduct(request: DeleteRequest): NetworkResponseWrapper<Any>{
+    suspend fun deleteReceiveProduct(request: DeleteRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.deleteReceiveProduct(request) }
     }
-    suspend fun insertOrderProduct(request: OrderRequest): NetworkResponseWrapper<Any>{
+    suspend fun insertOrderProduct(request: OrderRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.insertOrderProduct(request) }
     }
-    suspend fun insertReceiveProduct(request: ReceiveRequest): NetworkResponseWrapper<Any>{
+    suspend fun insertReceiveProduct(request: ReceiveRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.insertReceiveProduct(request) }
     }
-    suspend fun checkIp(request: CheckIpRequest): NetworkResponseWrapper<Any>{
+    suspend fun checkIp(request: CheckIpRequest): NetworkResponseWrapper<Any>?{
         val api = retrofit.create<Api>()
         return doRequest { api.checkIp(request) }
     }

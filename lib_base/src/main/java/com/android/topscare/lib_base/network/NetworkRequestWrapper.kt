@@ -7,19 +7,20 @@ import retrofit2.HttpException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-suspend fun <T> doRequest(apiCall: suspend () -> T): T {
+suspend fun <T> doRequest(apiCall: suspend () -> T): T? {
     return try {
         apiCall()
     } catch (throwable: Throwable) {
-        when (throwable) {
-            is SocketTimeoutException -> throw NoNetworkException(throwable.message)
-            is UnknownHostException -> throw ServerUnreachableException(throwable.message)
-            is HttpException -> {
-                Sentry.captureException(throwable)
-                throw resolveHttpException(throwable)
-            }
-            else -> throw Exception(throwable.message)
-        }
+        null
+//        when (throwable) {
+//            is SocketTimeoutException -> throw NoNetworkException(throwable.message)
+//            is UnknownHostException -> throw ServerUnreachableException(throwable.message)
+//            is HttpException -> {
+//                Sentry.captureException(throwable)
+//                throw resolveHttpException(throwable)
+//            }
+//            else -> throw Exception(throwable.message)
+//        }
     }
 }
 
