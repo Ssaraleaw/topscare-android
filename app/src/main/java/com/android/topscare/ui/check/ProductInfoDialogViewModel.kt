@@ -14,15 +14,14 @@ class ProductInfoDialogViewModel : BaseViewModel<Unit>() {
     val _barcode = MutableLiveData<String>()
     val _store = MutableLiveData<String>()
     val _amount = MutableLiveData<Int>()
-
+    val _code = MutableLiveData<String>()
     fun onClosePressed(){
         _onClosePressed()
     }
 
     fun init(product : ProductResponse){
-        product.barcode?.let {
-            _barcode.value = it
-        }
+        _barcode.value = if(product.barcode.isNullOrEmpty()) "N/A" else product.barcode
+        _code.value = if(product.id.isNullOrEmpty()) "N/A" else product.id
         _name.value = if(product.name.isNullOrEmpty()) "N/A" else product.name
         _cname.value = if(product.commonName.isNullOrEmpty()) "N/A" else product.commonName
         product.price?.let {

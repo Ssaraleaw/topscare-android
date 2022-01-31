@@ -29,6 +29,7 @@ class PrepareScanViewModel @ViewModelInject constructor(
     val _onCameraPressed = SingleLiveEvent<Any>()
     val _scanMode = SingleLiveEvent<ScanMode>()
     val _product = SingleLiveEvent<ProductResponse>()
+    val _dataNotFound = SingleLiveEvent<Any>()
     val _onHistoryPressed = SingleLiveEvent<Any>()
     val _title = MutableLiveData<String>()
     fun init(scanMode : ScanMode){
@@ -60,8 +61,11 @@ class PrepareScanViewModel @ViewModelInject constructor(
     }
 
     fun getProductByKey(key: String) = launchRequest {
-        getProductByKeyUseCase(input = key)?.let {
-            _product.postValue(it)
+        val data = getProductByKeyUseCase(input = key)
+        if(data!=null){
+            _product.postValue(data!!)
+        }else{
+            _dataNotFound()
         }
         _dataStates.postValue(DataState.Success(getViewState()))
     }

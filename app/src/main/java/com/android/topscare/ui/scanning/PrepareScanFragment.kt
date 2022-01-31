@@ -86,6 +86,9 @@ class PrepareScanFragment : BaseFragment() {
             observe(_onCameraPressed){
                 openCameraToScan()
             }
+            observe(_dataNotFound){
+                Toast.makeText(requireContext(), getString(R.string.data_not_found), Toast.LENGTH_SHORT).show()
+            }
             observe(_product){
                 when(navHostViewModel.scanMode.value){
                     ScanMode.CHECK ->{

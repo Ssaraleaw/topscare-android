@@ -20,8 +20,9 @@
     <string name="error_desc">Sorry system is not available temporarily. please try again later. thank you.</string>
     <string name="use_camera">Use Camera</string>
     <string name="fcname">Generic name: %s</string>
-    <string name="fprice">Price: %s</string>
+    <string name="fprice">Normal Price: %s</string>
     <string name="fstore">Store: %s</string>
+    <string name="fcode">Product Code: %s</string>
     <string name="famount">Remaining Amount: %d</string>
     <string name="ffree">Free Amount: %s</string>
     <string name="flotno">Lot No.: %s</string>
@@ -50,4 +51,5 @@
 </string>
     <string name="scan_now">Scan Now!</string>
     <string name="getting_stared">Getting Stared</string>
+    <string name="data_not_found">Data not found</string>
 </resources>
