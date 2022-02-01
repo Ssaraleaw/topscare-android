@@ -23,7 +23,7 @@
     <string name="fcname">ชื่อสามัญทางยา: %s</string>
     <string name="fprice">ราคาขายปกติ: %s</string>
     <string name="fstore">สถานที่เก็บ: %s</string>
-    <string name="fcode">อินมอนอลโค้ด(รหัสสินค้า): %s</string>
+    <string name="fcode">รหัสสินค้า: %s</string>
     <string name="famount">จำนวนคงเหลือ: %d</string>
     <string name="ffree">จำนวนแถม: %s</string>
     <string name="fexpdate">วันหมดอายุ: %s</string>
