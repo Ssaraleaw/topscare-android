@@ -20,8 +20,12 @@ import com.android.topscare.lib_base.extension.isDateFormat
 import com.android.topscare.lib_base.extension.observe
 import com.android.topscare.lib_base.state.DataState
 import com.android.topscare.ui.count.CountDialogFragmentArgs
+import com.fastaccess.datetimepicker.DatePickerFragmentDialog
+import com.fastaccess.datetimepicker.callback.DatePickerCallback
+import java.text.SimpleDateFormat
+import java.util.*
 
-class ReceiveDialogFragment : BaseDialogFragment() {
+class ReceiveDialogFragment : BaseDialogFragment(), DatePickerCallback {
     lateinit var binding: FragmentReceiveDialogBinding
     private val viewModel: ReceiveDialogViewModel by viewModels()
     private val args by navArgs<CountDialogFragmentArgs>()
@@ -71,6 +75,9 @@ class ReceiveDialogFragment : BaseDialogFragment() {
                     navController.popBackStack()
                 }
             }
+            observe(_onDatePickPressed){
+                DatePickerFragmentDialog.newInstance().show(childFragmentManager, "DatePickerFragmentDialog")
+            }
         }
     }
 
@@ -103,5 +110,11 @@ class ReceiveDialogFragment : BaseDialogFragment() {
                 DataState.Success(Unit)
             }
         }
+    }
+
+    override fun onDateSet(date: Long) {
+        val _date = Date(date)
+        val format = SimpleDateFormat("yyyy-MM-dd")
+        viewModel._exp.value = format.format(_date)
     }
 }
