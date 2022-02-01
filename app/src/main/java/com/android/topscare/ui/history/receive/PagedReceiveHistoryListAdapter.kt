@@ -39,8 +39,12 @@ class PagedReceiveHistoryListAdapter(
         }
     }
     private fun onItemDeleteClicked(i: Int): Boolean{
-        getItem(i)?.let { count ->
-            onItemDeleteClicked(count)
+        try {
+            getItem(i)?.let { count ->
+                onItemDeleteClicked(count)
+            }
+        }catch (ex: IndexOutOfBoundsException){
+            ex.printStackTrace()
         }
         return true
     }
