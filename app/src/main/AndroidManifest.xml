@@ -39,6 +39,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="topscare" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.topscare.ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.getting_started.GettingStartedActivity"

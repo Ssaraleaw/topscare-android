@@ -12,11 +12,14 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
+import androidx.navigation.fragment.navArgs
+import androidx.navigation.navArgs
 import com.android.topscare.NavHostActivity
 import com.android.topscare.R
 import com.android.topscare.databinding.ActivityGettingStartedBinding
 import com.android.topscare.lib_base.extension.observe
 import com.android.topscare.lib_base.extension.toUri
+import com.android.topscare.ui.check.ProductInfoDialogFragmentArgs
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
 import com.journeyapps.barcodescanner.ScanOptions
@@ -26,6 +29,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class GettingStartedActivity : AppCompatActivity() {
     private val viewModel: GettingStartedViewModel by viewModels()
     private lateinit var binding: ActivityGettingStartedBinding
+    private val args by navArgs<GettingStartedActivityArgs>()
     private val barcodeLauncher = registerForActivityResult(
         ScanContract()
     ) { result: ScanIntentResult ->
@@ -50,6 +54,11 @@ class GettingStartedActivity : AppCompatActivity() {
         }
         binding.descGettingStart.text = HtmlCompat.fromHtml(getString(R.string.desc_getting_started), HtmlCompat.FROM_HTML_MODE_COMPACT)
         registerObserver()
+        val ip = args.ip
+        val key = args.key
+        if(ip?.isNotEmpty() == true && key?.isNotEmpty() == true){
+            viewModel.doCheckIp(ip, key)
+        }
     }
 
     private fun navigateToMainMenu() {

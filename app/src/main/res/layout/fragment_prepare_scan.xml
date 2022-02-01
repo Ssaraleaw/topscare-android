@@ -62,16 +62,7 @@
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/btn_back"
             tools:text="Setting" />
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
-            android:layout_width="0dp"
-            android:layout_marginTop="@dimen/size_16"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_input_field_decoration"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/label_title_page"
-            />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_bg"
             android:layout_width="0dp"
@@ -84,7 +75,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             android:adjustViewBounds="true"
@@ -95,6 +86,17 @@
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/size_16"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input_field_decoration"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/label_title_page"
+            />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/layout_btn"

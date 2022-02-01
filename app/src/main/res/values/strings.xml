@@ -52,4 +52,9 @@
     <string name="scan_now">Scan Now!</string>
     <string name="getting_stared">Getting Stared</string>
     <string name="data_not_found">Data not found</string>
+
+    <string name="datawedge_intent_key_source" translatable="false">com.symbol.datawedge.source</string>
+    <string name="datawedge_intent_key_label_type" translatable="false">com.symbol.datawedge.label_type</string>
+    <string name="datawedge_intent_key_data" translatable="false">com.symbol.datawedge.data_string</string>
+
 </resources>

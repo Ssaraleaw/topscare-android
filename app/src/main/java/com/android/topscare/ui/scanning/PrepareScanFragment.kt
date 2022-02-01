@@ -141,6 +141,11 @@ class PrepareScanFragment : BaseFragment() {
                     viewModel.insertOrder(it)
                 }
             }
+            observe(_doReceiveBarcode){
+                binding.searchView.setQuery(it, false)
+                binding.searchView.clearFocus()
+                viewModel.getProductByKey(key = it)
+            }
         }
     }
 

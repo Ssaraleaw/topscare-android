@@ -28,7 +28,10 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if(viewModel.isFistTimeUsage()){
-                startActivity(Intent(this,GettingStartedActivity::class.java))
+                startActivity(Intent(this,GettingStartedActivity::class.java).apply {
+                    putExtra("ip","")
+                    putExtra("key","")
+                })
             }else {
                 startActivity(Intent(this, NavHostActivity::class.java))
             }

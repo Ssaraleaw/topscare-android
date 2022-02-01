@@ -220,9 +220,19 @@
         android:id="@+id/gettingStartedActivity"
         android:name="com.android.topscare.ui.getting_started.GettingStartedActivity"
         android:label="GettingStartedActivity" >
+        <argument
+            android:name="ip"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="key"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
         <deepLink
             android:id="@+id/gettingStaredDeepLink"
-            app:uri="topscare://getting"/>
+            app:uri="topscare://getting?ip={ip}&amp;key={key}"/>
     </activity>
 
 </navigation>

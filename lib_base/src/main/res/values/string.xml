@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_intent_filter_action" translatable="false">com.android.topscare.ACTION</string>
+</resources>

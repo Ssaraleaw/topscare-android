@@ -1,14 +1,17 @@
 package com.android.topscare
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.android.topscare.databinding.ActivityNavHostBinding
+import com.android.topscare.lib_base.utils.DWUtilities
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -24,6 +27,7 @@ class NavHostActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = navHostViewModel
         setContentView(binding.root)
+        DWUtilities.CreateDWProfile(this)
         makeStatusBarTransparent()
     }
 
@@ -35,5 +39,15 @@ class NavHostActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             statusBarColor = Color.TRANSPARENT
         }
+    }
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        updateScanResult(intent)
+    }
+
+    private fun updateScanResult(scanIntent: Intent) {
+        val decodedData =
+            scanIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_data))
+        navHostViewModel._doReceiveBarcode.value = decodedData
     }
 }
