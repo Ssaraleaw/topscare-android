@@ -2,9 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
-        <variable name="viewModel"
-            type="com.android.topscare.ui.count.CountDialogViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="com.android.topscare.ui.count.CountDialogViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -42,78 +45,92 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label_title"
+                style="@style/TextAppearance.Headline5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="left"
                 android:layout_marginTop="@dimen/size_24"
-                style="@style/TextAppearance.Headline5"
+                android:gravity="left"
                 android:text="@{viewModel._name}"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                tools:text="Product name"
-                />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Product name" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label_description"
+                style="@style/TextAppearance.BodyTiny"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_10"
-                style="@style/TextAppearance.BodyTiny"
                 android:gravity="left"
                 android:text="@{viewModel._barcode}"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
                 app:layout_constraintTop_toBottomOf="@+id/label_title"
-                tools:text="1234567890"/>
+                tools:text="1234567890" />
 
             <View
                 android:id="@+id/layout_divider"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginBottom="@dimen/size_10"
                 android:layout_marginTop="@dimen/size_10"
-                app:layout_constraintTop_toBottomOf="@id/label_description"
+                android:layout_marginBottom="@dimen/size_10"
+                android:background="@color/gray_200"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                android:background="@color/gray_200"
-                />
+                app:layout_constraintTop_toBottomOf="@id/label_description" />
 
-            <com.android.topscare.lib_base.customview.TopsCareNumberTextField
-                android:id="@+id/edt_amount"
+            <LinearLayout
+                android:id="@+id/layout_amount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size_16"
-                app:maxLength="@{6}"
-                app:hint="@{@string/hint_amount}"
-                app:text="@={viewModel._amount}"
-                app:title="@{@string/amount}"
-                app:uiState="@{viewModel._amountUiState}"
-                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintEnd_toStartOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                app:layout_constraintTop_toBottomOf="@id/layout_divider"
-                />
+                app:layout_constraintTop_toBottomOf="@id/layout_divider">
+
+                <com.android.topscare.lib_base.customview.TopsCareNumberTextField
+                    android:id="@+id/edt_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_16"
+                    android:layout_weight="1"
+                    app:hint="@{@string/hint_amount}"
+                    app:maxLength="@{6}"
+                    app:text="@={viewModel._amount}"
+                    app:title="@{@string/amount}"
+                    app:uiState="@{viewModel._amountUiState}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/label_unit"
+                    style="@style/TextAppearance.BodyTiny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/size_8"
+                    android:layout_gravity="bottom"
+                    android:text="@{viewModel._unit}"
+                    tools:text="Unit" />
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_continue"
                 style="@style/ActionButtonTheme.Primary"
                 android:layout_width="@dimen/size_0"
+                android:layout_marginStart="@dimen/size_14"
                 android:layout_marginTop="@dimen/size_24"
                 android:layout_marginEnd="@dimen/size_14"
-                android:layout_marginStart="@dimen/size_14"
                 android:enabled="@{viewModel._amount.length()>0}"
                 android:onClick="@{() -> viewModel.onSavePressed()}"
                 android:text="@string/save"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                app:layout_constraintTop_toBottomOf="@id/edt_amount" />
+                app:layout_constraintTop_toBottomOf="@id/layout_amount" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_scan"
                 style="@style/ActionButtonTheme.Secondary"
                 android:layout_width="@dimen/size_0"
-                android:layout_marginEnd="@dimen/size_14"
                 android:layout_marginStart="@dimen/size_14"
+                android:layout_marginEnd="@dimen/size_14"
                 android:onClick="@{() -> viewModel.onClosePressed()}"
                 android:text="@string/close"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"

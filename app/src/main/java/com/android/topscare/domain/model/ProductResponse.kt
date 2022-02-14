@@ -24,6 +24,7 @@ data class ProductResponse(
     @SerializedName("product_commonname") val commonName: String?,
     @SerializedName("product_sale_price") val price: Double,
     @SerializedName("product_stay") val stay: String?,
+    @SerializedName("product_unit_name") val unit: String?,
     @SerializedName("amount_stock") val amount: Int
 ) : Parcelable{
 

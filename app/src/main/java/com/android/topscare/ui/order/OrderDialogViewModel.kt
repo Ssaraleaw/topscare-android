@@ -23,6 +23,7 @@ class OrderDialogViewModel @ViewModelInject constructor(
     val _store = MutableLiveData<String>()
     val _amountUiState = MediatorLiveData<DataState<Unit>>()
     val _amount = MutableLiveData<String>()
+    val _unit = MutableLiveData<String>()
     val _free_amount = MutableLiveData<String>()
     val _freeAmountUiState = MediatorLiveData<DataState<Unit>>()
 
@@ -40,6 +41,7 @@ class OrderDialogViewModel @ViewModelInject constructor(
         product.id?.let {
             _id.value = it
         }
+        _unit.value = if(product.unit.isNullOrEmpty()) "N/A" else product.unit
         _name.value = if(product.name.isNullOrEmpty()) "N/A" else product.name
         _cname.value = if(product.commonName.isNullOrEmpty()) "N/A" else product.commonName
         product.price?.let {

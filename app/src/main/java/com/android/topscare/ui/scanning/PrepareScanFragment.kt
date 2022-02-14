@@ -37,7 +37,7 @@ class PrepareScanFragment : BaseFragment() {
         if (result.contents != null) {
             doVibrate()
             result.contents?.let {
-                binding.searchView.setQuery(it, false)
+//                binding.searchView.setQuery(it, false)
                 binding.searchView.clearFocus()
                 viewModel.getProductByKey(key = it)
             }
@@ -142,7 +142,7 @@ class PrepareScanFragment : BaseFragment() {
                 }
             }
             observe(_doReceiveBarcode){
-                binding.searchView.setQuery(it, false)
+//                binding.searchView.setQuery(it, false)
                 binding.searchView.clearFocus()
                 viewModel.getProductByKey(key = it)
             }
@@ -303,7 +303,7 @@ class PrepareScanFragment : BaseFragment() {
                         data, charset, dataBytesStr, aimId, codeId, timestamp
                     )
                     data?.let {
-                        binding.searchView.setQuery(it, false)
+//                        binding.searchView.setQuery(it, false)
                         binding.searchView.clearFocus()
                         viewModel.getProductByKey(key = it)
                     }
