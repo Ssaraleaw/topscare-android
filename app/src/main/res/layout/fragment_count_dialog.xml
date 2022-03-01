@@ -95,7 +95,7 @@
                     android:layout_marginTop="@dimen/size_16"
                     android:layout_weight="1"
                     app:hint="@{@string/hint_amount}"
-                    app:maxLength="@{6}"
+                    app:maxLength="@{3}"
                     app:text="@={viewModel._amount}"
                     app:title="@{@string/amount}"
                     app:uiState="@{viewModel._amountUiState}" />

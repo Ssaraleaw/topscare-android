@@ -63,7 +63,7 @@
             android:hint="@{hint}"
             android:maxLength="@{maxLength}"
             android:maxLines="1"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:text="@={text}"
             android:drawableEnd="@{endTextDrawable}"
             android:paddingStart="10dp"

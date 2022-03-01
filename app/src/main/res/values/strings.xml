@@ -42,6 +42,7 @@
     <string name="label_exp_date">Expire date</string>
     <string name="order_history">Order History</string>
     <string name="count_history">Count History</string>
+    <string name="label_unit">Unit: %s</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Yes, Delete now!</string>
     <string name="title_delete">Confirm to delete.</string>

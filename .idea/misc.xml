@@ -30,7 +30,7 @@
         <entry key="app/src/main/res/layout/fragment_confirm_delete_order_dialog.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_confirm_delete_receive_dialog.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/fragment_confirm_dialog.xml" value="0.23505434782608695" />
-        <entry key="app/src/main/res/layout/fragment_count_dialog.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_count_dialog.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_count_history.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/fragment_edit_url_enpoint_dialog.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/fragment_error_dialog.xml" value="0.18125" />
@@ -39,7 +39,7 @@
         <entry key="app/src/main/res/layout/fragment_order_dialog.xml" value="0.23007246376811594" />
         <entry key="app/src/main/res/layout/fragment_order_history.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_prepare_scan.xml" value="0.22991071428571427" />
-        <entry key="app/src/main/res/layout/fragment_product_info_dialog.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_product_info_dialog.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_receive_dialog.xml" value="0.18115942028985507" />
         <entry key="app/src/main/res/layout/fragment_receive_history.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.335" />
