@@ -156,6 +156,18 @@
                     android:text="@{viewModel._unit}"
                     tools:text="Unit" />
             </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_unit1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                style="@style/TextAppearance.BodySmall"
+                android:gravity="left"
+                android:text="@{@string/label_unit(viewModel._unit)}"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintTop_toBottomOf="@id/layout_amount"
+                tools:text="Unit: btn"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/label_package"
@@ -164,10 +176,10 @@
                 android:layout_marginTop="@dimen/size_10"
                 style="@style/TextAppearance.BodySmall"
                 android:gravity="left"
-                android:text="@{@string/label_unit(viewModel._packing)}"
+                android:text="@{@string/label_packaging(viewModel._packing)}"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
-                app:layout_constraintTop_toBottomOf="@id/layout_amount"
+                app:layout_constraintTop_toBottomOf="@id/label_unit1"
                 tools:text="Unit: 50 Baht "/>
 
             <com.google.android.material.button.MaterialButton
