@@ -52,6 +52,7 @@
         <entry key="app/src/main/res/layout/viewholder_count_item.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/viewholder_order_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/viewholder_receive_item.xml" value="0.335" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.126" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1225" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration.xml" value="0.186" />
         <entry key="lib_base/src/main/res/drawable/bg_input_field_decoration_error.xml" value="0.151" />
