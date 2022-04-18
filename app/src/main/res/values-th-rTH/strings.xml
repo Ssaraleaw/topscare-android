@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TopsCare-Android</string>
+    <string name="app_name">WorldMedic-Android</string>
     <string name="label_powered_by">Powered by WorldMedic</string>
     <string name="label_main_menu">เมนูหลัก</string>
     <string name="check">เช็คสินค้า</string>
@@ -51,7 +51,7 @@
     <string name="desc_delete">คุณต้องการลบข้อมูล %s จำนวน: %d ใช่หรือไม่?</string>
     <string name="receive_history">Receive History</string>
     <string name="scan_now">สแกนเลย!</string>
-    <string name="desc_getting_started"><![CDATA[1. Please make sure the API and database are completely installed.<br>2. go to \'http://{your ip server}/topscare/setup.php\'<br>3. Click Scan Now for using.]]>
+    <string name="desc_getting_started"><![CDATA[1. Please make sure the API and database are completely installed.<br>2. go to \'http://{your ip server}/worldMedic/setup.php\'<br>3. Click Scan Now for using.]]>
     </string>
     <string name="getting_stared">เริ่มต้นใช้งาน</string>
     <string name="data_not_found">ไม่พบรายการ</string>

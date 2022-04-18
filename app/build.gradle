@@ -12,7 +12,7 @@ android {
     buildToolsVersion versions.build_tool
 
     defaultConfig {
-        applicationId "com.android.topscare"
+        applicationId "com.android.topscare1"
         minSdk versions.min_sdk
         targetSdk versions.target_sdk
         versionCode version_code
@@ -21,9 +21,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         applicationVariants.all { variant ->
             if (variant.getName() == "debug") {
-                variant.buildConfigField "String", "SERVER_URL", "\"http://localhost/topscar\""
+                variant.buildConfigField "String", "SERVER_URL", "\"http://localhost/worldMedic\""
             }else if (variant.getName() == "relese") {
-                variant.buildConfigField "String", "SERVER_URL", "\"http://localhost/topscare\""
+                variant.buildConfigField "String", "SERVER_URL", "\"http://localhost/worldMedic\""
             }
 
         }
